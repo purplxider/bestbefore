@@ -9,6 +9,12 @@
 import UIKit
 
 class D_dayTableViewController: UITableViewController {
+    
+    
+    var foods:[Food] = []
+    
+   
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +24,15 @@ class D_dayTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        var food1 = Food(date: "2018. 01. 02", dDay: "D+7", foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColor.red)
+//        var food2 = Food(date: "2018. 01. 08", dDay: "D-1", foodImage: <#T##UIImage#>, foodColor: UIColor.yellow)
+//        var food3 = Food(date: "2018. 01. 15", dDay: "D-10", foodImage: <#T##UIImage#>, foodColor: UIColor.green)
+        
+        foods.append(food1)
+//        foods.append(food2)
+//        foods.append(food3)
+//
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,23 +44,29 @@ class D_dayTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return foods.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath)
 
-        // Configure the cell...
-
+        
+        var food = foods[indexPath.row]
+        
+        cell.imageView?.image = food.foodImage
+        cell.textLabel?.text = food.date
+        cell.detailTextLabel?.text = food.dDay
+        cell.backgroundColor = food.foodColor
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

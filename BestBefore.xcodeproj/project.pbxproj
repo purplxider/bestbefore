@@ -12,6 +12,8 @@
 		66C368BE2022B7AD000FCD5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C368BC2022B7AD000FCD5D /* Main.storyboard */; };
 		66C368C02022B7AD000FCD5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66C368BF2022B7AD000FCD5D /* Assets.xcassets */; };
 		66C368C32022B7AD000FCD5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C368C12022B7AD000FCD5D /* LaunchScreen.storyboard */; };
+		66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368CA2022B7FC000FCD5D /* D-dayTableViewController.swift */; };
+		66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368CC2022B959000FCD5D /* FoodClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		66C368BF2022B7AD000FCD5D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66C368C22022B7AD000FCD5D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		66C368C42022B7AD000FCD5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		66C368CA2022B7FC000FCD5D /* D-dayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D-dayTableViewController.swift"; sourceTree = "<group>"; };
+		66C368CC2022B959000FCD5D /* FoodClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +60,9 @@
 			children = (
 				66C368B82022B7AD000FCD5D /* AppDelegate.swift */,
 				66C368BA2022B7AD000FCD5D /* ViewController.swift */,
+				66C368CA2022B7FC000FCD5D /* D-dayTableViewController.swift */,
 				66C368BC2022B7AD000FCD5D /* Main.storyboard */,
+				66C368CC2022B959000FCD5D /* FoodClass.swift */,
 				66C368BF2022B7AD000FCD5D /* Assets.xcassets */,
 				66C368C12022B7AD000FCD5D /* LaunchScreen.storyboard */,
 				66C368C42022B7AD000FCD5D /* Info.plist */,
@@ -136,6 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */,
+				66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
 				66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */,
 			);
