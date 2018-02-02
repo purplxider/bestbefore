@@ -34,11 +34,11 @@ class Settings {
 
 class Food {
     var date:String
-    var dDay:String
+    var dDay:Int
     var foodImage:UIImage
     var foodColor:UIColor
     
-    init (date:String, dDay:String, foodImage:UIImage, foodColor:UIColor){
+    init (date:String, dDay:Int, foodImage:UIImage, foodColor:UIColor){
         self.date = date
         self.dDay = dDay
         self.foodImage = foodImage

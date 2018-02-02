@@ -25,13 +25,13 @@ class D_dayTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        var food1 = Food(date: "2018. 01. 02", dDay: "D+7", foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColor.red)
-//        var food2 = Food(date: "2018. 01. 08", dDay: "D-1", foodImage: <#T##UIImage#>, foodColor: UIColor.yellow)
-//        var food3 = Food(date: "2018. 01. 15", dDay: "D-10", foodImage: <#T##UIImage#>, foodColor: UIColor.green)
+        var food1 = Food(date: "2018. 01. 02", dDay: -7, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColor.red)
+        var food2 = Food(date: "2018. 01. 08", dDay: 1, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColor.yellow)
+        var food3 = Food(date: "2018. 01. 15", dDay: 10, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColor.green)
         
         foods.append(food1)
-//        foods.append(food2)
-//        foods.append(food3)
+        foods.append(food2)
+        foods.append(food3)
 //
     }
 
@@ -44,7 +44,7 @@ class D_dayTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 3
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -61,7 +61,11 @@ class D_dayTableViewController: UITableViewController {
         
         cell.imageView?.image = food.foodImage
         cell.textLabel?.text = food.date
-        cell.detailTextLabel?.text = food.dDay
+        if food.dDay < 0 {
+            cell.detailTextLabel?.text = "D + \(-food.dDay)"
+        } else {
+            cell.detailTextLabel?.text = "D - \(food.dDay)"
+        }
         cell.backgroundColor = food.foodColor
         
         return cell
@@ -103,14 +107,20 @@ class D_dayTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        if let indexPath = tableView.indexPathForSelectedRow {
+            let selectedRow = indexPath.row
+            let vc = segue.destination as? DetailViewController
+            vc?.food = foods[selectedRow]
+        }
     }
-    */
+ 
 
 }

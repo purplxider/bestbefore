@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		669990D62023F9AB00410F21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990D52023F9AB00410F21 /* DetailViewController.swift */; };
 		66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368B82022B7AD000FCD5D /* AppDelegate.swift */; };
 		66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368BA2022B7AD000FCD5D /* ViewController.swift */; };
 		66C368BE2022B7AD000FCD5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C368BC2022B7AD000FCD5D /* Main.storyboard */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		669990D52023F9AB00410F21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		66C368B52022B7AD000FCD5D /* BestBefore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBefore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C368B82022B7AD000FCD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66C368BA2022B7AD000FCD5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 				66C368BF2022B7AD000FCD5D /* Assets.xcassets */,
 				66C368C12022B7AD000FCD5D /* LaunchScreen.storyboard */,
 				66C368C42022B7AD000FCD5D /* Info.plist */,
+				669990D52023F9AB00410F21 /* DetailViewController.swift */,
 			);
 			path = BestBefore;
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			files = (
 				66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */,
 				66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */,
+				669990D62023F9AB00410F21 /* DetailViewController.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
 				66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */,
 			);
