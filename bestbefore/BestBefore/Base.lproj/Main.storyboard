@@ -52,7 +52,13 @@
                             <outlet property="delegate" destination="4zN-xW-zLL" id="c3E-tP-Ldl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="리스트" id="5xe-51-F1B"/>
+                    <navigationItem key="navigationItem" title="리스트" id="5xe-51-F1B">
+                        <barButtonItem key="leftBarButtonItem" title="삭제" id="t5g-ET-oMT">
+                            <connections>
+                                <action selector="deleteButton:" destination="4zN-xW-zLL" id="j3g-aw-79k"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Az-iR-IPz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -386,6 +392,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nqU-Ze-f1E"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="D5Y-es-Ne7">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
