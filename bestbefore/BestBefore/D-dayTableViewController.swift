@@ -10,11 +10,20 @@ import UIKit
 
 class D_dayTableViewController: UITableViewController {
     
+
     
     var foods:[Food] = []
     
     
-    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +34,9 @@ class D_dayTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        var food1 = Food(date: "2018. 01. 02", dDay: -7, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColor.red)
-        var food2 = Food(date: "2018. 01. 08", dDay: 1, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColor.yellow)
-        var food3 = Food(date: "2018. 01. 15", dDay: 10, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColor.green)
+        var food1 = Food(date: "2018. 01. 02", dDay: -7, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFC9C9))
+        var food2 = Food(date: "2018. 01. 08", dDay: 1, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFC9))
+        var food3 = Food(date: "2018. 01. 15", dDay: 10, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xC9FFD8))
         
         foods.append(food1)
         foods.append(food2)
@@ -54,19 +63,21 @@ class D_dayTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath) as! D_DayTableViewCell
         
         
         var food = foods[indexPath.row]
         
-        cell.imageView?.image = food.foodImage
-        cell.textLabel?.text = food.date
+        cell.foodImage.image = food.foodImage
+        cell.dateLabel.text = food.date
         if food.dDay < 0 {
-            cell.detailTextLabel?.text = "D + \(-food.dDay)"
+            cell.dDayLabel.text = "D + \(-food.dDay)"
         } else {
-            cell.detailTextLabel?.text = "D - \(food.dDay)"
+            cell.dDayLabel.text = "D - \(food.dDay)"
         }
+        
         cell.backgroundColor = food.foodColor
+        
         
         return cell
     }
