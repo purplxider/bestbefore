@@ -49,6 +49,8 @@ class D_dayTableViewController: UITableViewController {
         foods.append(food5)
         foods.append(food6)
         sortedFoods = foods.sorted(by: {$0.dDay < $1.dDay})
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -75,13 +77,21 @@ class D_dayTableViewController: UITableViewController {
         
         var food = sortedFoods[indexPath.row]
         
+        
+        
         cell.foodImage.image = food.foodImage
-        cell.dateLabel.text = food.date
-        if food.dDay < 0 {
-            cell.dDayLabel.text = "D + \(-food.dDay)"
+        
+        cell.dateLabel.text = "유통기한 : \(food.date)"
+        
+        
+        if food.dDay > 2 {
+            cell.dDayLabel.text = "\(food.dDay)일 남았습니다."
+        } else if food.dDay > 0{
+            cell.dDayLabel.text = "얼마 남지 않았습니다."
         } else {
-            cell.dDayLabel.text = "D - \(food.dDay)"
+                cell.dDayLabel.text = "\(-food.dDay)일 지났습니다. 버리세요"
         }
+        
         
         cell.backgroundColor = food.foodColor
         

@@ -31,14 +31,14 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiA-hE-nYT">
-                                            <rect key="frame" x="133" y="29" width="118" height="21"/>
+                                            <rect key="frame" x="133" y="29" width="187" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AhM-90-BQO">
-                                            <rect key="frame" x="133" y="58" width="74" height="21"/>
+                                            <rect key="frame" x="133" y="58" width="187" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
@@ -63,6 +63,12 @@
                         <barButtonItem key="leftBarButtonItem" title="삭제" id="t5g-ET-oMT">
                             <connections>
                                 <action selector="deleteButton:" destination="4zN-xW-zLL" id="j3g-aw-79k"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="삭제" systemItem="add" id="Gvf-Xv-dNH">
+                            <connections>
+                                <action selector="deleteButton:" destination="4zN-xW-zLL" id="rKk-2A-CvR"/>
+                                <segue destination="Ytk-fc-Cc8" kind="show" id="st6-Cp-fW8"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -426,7 +432,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YyQ-Et-mo3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="831" y="769"/>
+            <point key="canvasLocation" x="1010" y="769"/>
         </scene>
         <!--알림 설정-->
         <scene sceneID="OFX-9I-vWt">
@@ -556,7 +562,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kbV-m5-d4v">
-                                                    <rect key="frame" x="193" y="0.0" width="154" height="44"/>
+                                                    <rect key="frame" x="193" y="0.0" width="154" height="45"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                 </pickerView>
                                             </subviews>
@@ -579,4 +585,7 @@
             <point key="canvasLocation" x="906" y="1519"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="st6-Cp-fW8"/>
+    </inferredMetricsTieBreakers>
 </document>
