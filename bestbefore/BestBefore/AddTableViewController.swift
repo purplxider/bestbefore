@@ -13,13 +13,32 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     
     var delegate:D_dayTableViewController?
     
+    var now = Date()
+    let formatter = DateFormatter()
+    
     @IBOutlet weak var addImage: UIImageView!
     
     @IBOutlet weak var dateTextField: UITextField!
     @IBAction func setCreate(_ sender: Any) {
         if let listVC = delegate {
             
-            listVC.foods.append(Food(date: dateTextField.text!, dDay: 1, foodImage:  addImage.image!, foodColor: UIColor.black))
+            formatter.dateFormat = "yy-MM-dd"
+            
+            var foodDate = formatter.date(from: dateTextField.text!)
+            var getDday = getIntervalDays(date: now, anotherDay: foodDate)
+            var getColor:UIColor = UIColorFromRGB(rgbValue: 0xFF0000)
+            
+            if getDday > 0 {
+                getColor = UIColorFromRGB(rgbValue: 0xFFD1D1)
+            } else if getDday > -2 {
+                getColor = UIColorFromRGB(rgbValue: 0xFEFFD1)
+            } else {
+                getColor = UIColorFromRGB(rgbValue: 0xD1FFD3)
+            }
+            
+            
+            
+            listVC.foods.append(Food(date: dateTextField.text!, dDay: Int(getDday), foodImage:  addImage.image!, foodColor: getColor))
             
             print("ok")
             
@@ -27,6 +46,30 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
             
             
         }
+    }
+    func getIntervalDays(date: Date?, anotherDay: Date? = nil) -> Double {
+        
+        var interval: Double!
+        
+        if anotherDay == nil {
+            interval = date?.timeIntervalSinceNow
+        } else {
+            interval = date?.timeIntervalSince(anotherDay!)
+        }
+        
+        let r = interval / 86400
+        
+        return floor(r)
+    }
+    
+    
+    func UIColorFromRGB(rgbValue: UInt) -> UIColor {
+        return UIColor(
+            red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
+            blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
+            alpha: CGFloat(1.0)
+        )
     }
     
     
