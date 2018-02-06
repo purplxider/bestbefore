@@ -13,6 +13,7 @@ class D_dayTableViewController: UITableViewController {
 
     
     var foods:[Food] = []
+    var sortedFoods:[Food] = []
     
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
@@ -34,14 +35,20 @@ class D_dayTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        var food1 = Food(date: "2018. 01. 02", dDay: -7, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFC9C9))
-        var food2 = Food(date: "2018. 01. 08", dDay: 1, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFC9))
-        var food3 = Food(date: "2018. 01. 15", dDay: 10, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xC9FFD8))
+        var food1 = Food(date: "2018. 01. 02", dDay: -7, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFD1D1))
+        var food2 = Food(date: "2018. 01. 08", dDay: 1, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFD1))
+        var food3 = Food(date: "2018. 01. 15", dDay: 10, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+        var food4 = Food(date: "2018. 01. 02", dDay: -7, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFD1D1))
+        var food5 = Food(date: "2018. 01. 08", dDay: 1, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFD1))
+        var food6 = Food(date: "2018. 01. 15", dDay: 10, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
         
         foods.append(food1)
         foods.append(food2)
         foods.append(food3)
-        //
+        foods.append(food4)
+        foods.append(food5)
+        foods.append(food6)
+        sortedFoods = foods.sorted(by: {$0.dDay < $1.dDay})
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,7 +73,7 @@ class D_dayTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath) as! D_DayTableViewCell
         
         
-        var food = foods[indexPath.row]
+        var food = sortedFoods[indexPath.row]
         
         cell.foodImage.image = food.foodImage
         cell.dateLabel.text = food.date

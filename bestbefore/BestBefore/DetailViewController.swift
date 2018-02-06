@@ -37,7 +37,7 @@ class DetailViewController: UIViewController {
                 dDayText.text = "D - \(myFood.dDay)"
                 expirationStatusText.text = "안전"
             }
-            expirationStatusText.textColor = myFood.foodColor
+//            expirationStatusText.textColor = myFood.foodColor
         }
     }
 
