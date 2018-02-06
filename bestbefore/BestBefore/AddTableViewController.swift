@@ -11,6 +11,23 @@ import UIKit
 class AddTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     
+    var delegate:D_dayTableViewController?
+    
+    @IBOutlet weak var dateTextField: UITextField!
+    @IBAction func setCreate(_ sender: Any) {
+        if let listVC = delegate {
+            
+            listVC.foods.append(Food(date: dateTextField.text!, dDay: 1, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColor.black))
+            
+            print("ok")
+            
+            navigationController?.popViewController(animated: true)
+            
+            
+        }
+    }
+    
+    
     let picker = UIImagePickerController()
     
     func openLibrary() {

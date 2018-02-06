@@ -48,9 +48,15 @@ class D_dayTableViewController: UITableViewController {
         foods.append(food4)
         foods.append(food5)
         foods.append(food6)
+        
+        
+        
+    }
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tableView.reloadData()
         sortedFoods = foods.sorted(by: {$0.dDay < $1.dDay})
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
@@ -170,7 +176,15 @@ class D_dayTableViewController: UITableViewController {
             let vc = segue.destination as? DetailViewController
             vc?.food = foods[selectedRow]
         }
+        
+        let createVC = segue.destination as? AddTableViewController
+        if let create = createVC {
+            create.delegate = self
+        
+        }
+        
     }
+    
     
     
 }

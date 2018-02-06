@@ -703,10 +703,15 @@
                                 <action selector="dismissAddView:" destination="pxK-6p-mZw" id="q0Q-Lq-nXo"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="저장" id="FQf-MQ-gCs"/>
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="FQf-MQ-gCs">
+                            <connections>
+                                <action selector="setCreate:" destination="pxK-6p-mZw" id="bjz-8Z-rpJ"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addImage" destination="Whm-p4-HPn" id="NwR-mU-3Og"/>
+                        <outlet property="dateTextField" destination="L1j-KV-0cu" id="BES-1t-JeP"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oaF-aF-0OG" userLabel="First Responder" sceneMemberID="firstResponder"/>
