@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6620F24C2028390900EDF167 /* _ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620F24B2028390900EDF167 /* _ViewController.swift */; };
 		669990D62023F9AB00410F21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990D52023F9AB00410F21 /* DetailViewController.swift */; };
 		66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368B82022B7AD000FCD5D /* AppDelegate.swift */; };
 		66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368BA2022B7AD000FCD5D /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6620F24B2028390900EDF167 /* _ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ViewController.swift; sourceTree = "<group>"; };
 		669990D52023F9AB00410F21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		66C368B52022B7AD000FCD5D /* BestBefore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBefore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C368B82022B7AD000FCD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 				66C368C12022B7AD000FCD5D /* LaunchScreen.storyboard */,
 				66C368C42022B7AD000FCD5D /* Info.plist */,
 				669990D52023F9AB00410F21 /* DetailViewController.swift */,
+				6620F24B2028390900EDF167 /* _ViewController.swift */,
 			);
 			path = BestBefore;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */,
+				6620F24C2028390900EDF167 /* _ViewController.swift in Sources */,
 				66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */,
 				669990D62023F9AB00410F21 /* DetailViewController.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
