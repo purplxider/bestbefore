@@ -13,11 +13,13 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     
     var delegate:D_dayTableViewController?
     
+    @IBOutlet weak var addImage: UIImageView!
+    
     @IBOutlet weak var dateTextField: UITextField!
     @IBAction func setCreate(_ sender: Any) {
         if let listVC = delegate {
             
-            listVC.foods.append(Food(date: dateTextField.text!, dDay: 1, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColor.black))
+            listVC.foods.append(Food(date: dateTextField.text!, dDay: 1, foodImage:  addImage.image!, foodColor: UIColor.black))
             
             print("ok")
             
@@ -40,7 +42,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
         present(picker, animated: false, completion: nil)
     }
     
-    @IBOutlet weak var addImage: UIImageView!
+
     @IBAction func dismissAddView(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }

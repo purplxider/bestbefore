@@ -174,7 +174,7 @@ class D_dayTableViewController: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             let selectedRow = indexPath.row
             let vc = segue.destination as? DetailViewController
-            vc?.food = foods[selectedRow]
+            vc?.food = sortedFoods[selectedRow]
         }
         
         let createVC = segue.destination as? AddTableViewController
