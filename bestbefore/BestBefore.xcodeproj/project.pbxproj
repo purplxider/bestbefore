@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6620F24C2028390900EDF167 /* _ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6620F24B2028390900EDF167 /* _ViewController.swift */; };
 		669990D62023F9AB00410F21 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 669990D52023F9AB00410F21 /* DetailViewController.swift */; };
+		66B7D186202975B500B5F9D0 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B7D185202975B500B5F9D0 /* AddTableViewController.swift */; };
 		66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368B82022B7AD000FCD5D /* AppDelegate.swift */; };
 		66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368BA2022B7AD000FCD5D /* ViewController.swift */; };
 		66C368BE2022B7AD000FCD5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C368BC2022B7AD000FCD5D /* Main.storyboard */; };
@@ -17,12 +18,12 @@
 		66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368CA2022B7FC000FCD5D /* D-dayTableViewController.swift */; };
 		66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368CC2022B959000FCD5D /* FoodClass.swift */; };
 		66E2B8492029421A00EC0936 /* D-DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */; };
-		66F1BF342029731E0037FA22 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F1BF332029731E0037FA22 /* AddTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		6620F24B2028390900EDF167 /* _ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _ViewController.swift; sourceTree = "<group>"; };
 		669990D52023F9AB00410F21 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		66B7D185202975B500B5F9D0 /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		66C368B52022B7AD000FCD5D /* BestBefore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBefore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C368B82022B7AD000FCD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66C368BA2022B7AD000FCD5D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,7 +34,6 @@
 		66C368CA2022B7FC000FCD5D /* D-dayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D-dayTableViewController.swift"; sourceTree = "<group>"; };
 		66C368CC2022B959000FCD5D /* FoodClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodClass.swift; sourceTree = "<group>"; };
 		66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D-DayTableViewCell.swift"; sourceTree = "<group>"; };
-		66F1BF332029731E0037FA22 /* AddTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddTableViewController.swift; path = ../../../../../Desktop/bestbefore/bestbefore/BestBefore/AddTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,11 +66,11 @@
 		66C368B72022B7AD000FCD5D /* BestBefore */ = {
 			isa = PBXGroup;
 			children = (
+				66B7D185202975B500B5F9D0 /* AddTableViewController.swift */,
 				66C368B82022B7AD000FCD5D /* AppDelegate.swift */,
 				66C368BA2022B7AD000FCD5D /* ViewController.swift */,
 				66C368CA2022B7FC000FCD5D /* D-dayTableViewController.swift */,
 				66C368BC2022B7AD000FCD5D /* Main.storyboard */,
-				66F1BF332029731E0037FA22 /* AddTableViewController.swift */,
 				66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */,
 				66C368CC2022B959000FCD5D /* FoodClass.swift */,
 				66C368BF2022B7AD000FCD5D /* Assets.xcassets */,
@@ -161,7 +161,7 @@
 				669990D62023F9AB00410F21 /* DetailViewController.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
 				66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */,
-				66F1BF342029731E0037FA22 /* AddTableViewController.swift in Sources */,
+				66B7D186202975B500B5F9D0 /* AddTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
