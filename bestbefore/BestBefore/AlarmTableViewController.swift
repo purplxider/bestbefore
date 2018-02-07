@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import AVFoundation
+import AudioToolbox
 
 class AlarmTableViewController: UITableViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+    @IBAction func Vibrate(_ sender: Any) {
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+    }
+    
+    @IBAction func Sound(_ sender: Any) {
+        AudioServicesPlaySystemSound(SystemSoundID( ))
+    }
+    
     @IBOutlet weak var datePickerTxt: UITextField! // 시간 설정
     @IBOutlet weak var dayPickerTxt: UITextField! // 날짜 설정
     
@@ -66,10 +76,7 @@ class AlarmTableViewController: UITableViewController, UIPickerViewDelegate, UIP
     }
 
     
-    
-    
-    
-    
+
     // MARK: - Table view data source
 
 //    override func numberOfSections(in tableView: UITableView) -> Int {
