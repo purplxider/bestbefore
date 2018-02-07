@@ -17,6 +17,7 @@
 		66C368C32022B7AD000FCD5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66C368C12022B7AD000FCD5D /* LaunchScreen.storyboard */; };
 		66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368CA2022B7FC000FCD5D /* D-dayTableViewController.swift */; };
 		66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368CC2022B959000FCD5D /* FoodClass.swift */; };
+		66C695C6202AB756005C15DC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C695C5202AB756005C15DC /* AlarmTableViewController.swift */; };
 		66E2B8492029421A00EC0936 /* D-DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		66C368C42022B7AD000FCD5D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66C368CA2022B7FC000FCD5D /* D-dayTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D-dayTableViewController.swift"; sourceTree = "<group>"; };
 		66C368CC2022B959000FCD5D /* FoodClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodClass.swift; sourceTree = "<group>"; };
+		66C695C5202AB756005C15DC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D-DayTableViewCell.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +80,7 @@
 				66C368C42022B7AD000FCD5D /* Info.plist */,
 				669990D52023F9AB00410F21 /* DetailViewController.swift */,
 				6620F24B2028390900EDF167 /* _ViewController.swift */,
+				66C695C5202AB756005C15DC /* AlarmTableViewController.swift */,
 			);
 			path = BestBefore;
 			sourceTree = "<group>";
@@ -158,6 +161,7 @@
 				66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */,
 				6620F24C2028390900EDF167 /* _ViewController.swift in Sources */,
 				66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */,
+				66C695C6202AB756005C15DC /* AlarmTableViewController.swift in Sources */,
 				669990D62023F9AB00410F21 /* DetailViewController.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
 				66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */,
