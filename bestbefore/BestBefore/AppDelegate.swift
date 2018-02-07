@@ -26,6 +26,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+        
+        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        let app = UIApplication.shared
+        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+        app.registerUserNotificationSettings(notificationSettings)
+        let alertTime = NSDate().addingTimeInterval(3)
+        let notifyAlarm = UILocalNotification()
+        
+        
+        
+        notifyAlarm.fireDate = alertTime as Date
+        notifyAlarm.timeZone = NSTimeZone.default
+        notifyAlarm.soundName = "bell_tree.mp3"
+        notifyAlarm.alertBody = "important metting in 30 minutes"
+        app.scheduleLocalNotification(notifyAlarm)
+        
+        
+        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
