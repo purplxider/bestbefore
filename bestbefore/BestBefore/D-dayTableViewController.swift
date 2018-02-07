@@ -174,9 +174,10 @@ class D_dayTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
         
         if let indexPath = tableView.indexPathForSelectedRow {
+            
             let selectedRow = indexPath.row
             let vc = segue.destination as? DetailViewController
-            vc?.food = sortedFoods[selectedRow]
+            vc?.food = self.foods[selectedRow]
         }
         
         let createVC = segue.destination as? AddTableViewController
