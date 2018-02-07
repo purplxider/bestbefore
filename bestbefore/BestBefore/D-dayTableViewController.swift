@@ -97,7 +97,7 @@ class D_dayTableViewController: UITableViewController {
         } else if food.dDay < 0{
             cell.dDayLabel.text = "얼마 남지 않았습니다."
         } else {
-                cell.dDayLabel.text = "\(food.dDay)일 지났습니다. 버리세요"
+                cell.dDayLabel.text = "\(food.dDay)일 지났습니다. 버리세요."
         }
         
         

@@ -14,7 +14,6 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var nameText: UILabel!
     @IBOutlet weak var expiryDateText: UILabel!
     @IBOutlet weak var dDayText: UILabel!
-    @IBOutlet weak var expirationStatusText: UILabel!
     
     var food:Food?
     
@@ -27,17 +26,16 @@ class DetailViewController: UIViewController {
             imageView.image = myFood.foodImage
             nameText.text = nil
             expiryDateText.text = myFood.date
+            
             if myFood.dDay < 0 {
-                dDayText.text = "D + \(-myFood.dDay)"
-                expirationStatusText.text = "종료"
-            } else if myFood.dDay < 14{
-                dDayText.text = "D - \(myFood.dDay)"
-                expirationStatusText.text = "임박"
-            } else {
-                dDayText.text = "D - \(myFood.dDay)"
-                expirationStatusText.text = "안전"
+            dDayText.text = "D\(myFood.dDay)"
             }
-//            expirationStatusText.textColor = myFood.foodColor
+            if myFood.dDay == 0 {
+                dDayText.text = "오늘까지 드세요!"
+            }
+            if myFood.dDay > 0 {
+                dDayText.text = "D+\(myFood.dDay)"
+            }
         }
     }
 

@@ -36,11 +36,11 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
                 getColor = UIColorFromRGB(rgbValue: 0xD1FFD3)
             }
             
+            if let addFoodImage = addImage.image {
             
-            
-            listVC.foods.append(Food(date: dateTextField.text!, dDay: Int(getDday), foodImage:  addImage.image!, foodColor: getColor))
-            
-            print("ok")
+            listVC.foods.append(Food(date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
+                
+            }
             
             navigationController?.popViewController(animated: true)
             
