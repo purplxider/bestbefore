@@ -195,7 +195,7 @@
                     <navigationItem key="navigationItem" title="알림" id="k1e-VE-ptO">
                         <barButtonItem key="leftBarButtonItem" title="삭제" id="P1w-5I-XqP">
                             <connections>
-                                <action selector="Delete:" destination="bur-Xo-Hf8" id="QHo-jo-DHc"/>
+                                <action selector="deleteButton:" destination="bur-Xo-Hf8" id="tq8-0N-gYM"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="bF5-4Q-3KU">

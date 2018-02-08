@@ -14,11 +14,15 @@ class AlarmListTableViewController: UITableViewController {
     var alarms:[Alarm] = []
     
     
+    @IBAction func deleteButton(_ sender: Any) {
+        self.isEditing = !self.isEditing
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var alarm1 = Alarm(time: "08:30 AM", mode: "소리")
-        var alarm2 = Alarm(time: "06:30 PM", mode: "진동")
+        var alarm1 = Alarm(time: "08:30", mode: "소리")
+        var alarm2 = Alarm(time: "06:30", mode: "진동")
         
         alarms.append(alarm1)
         alarms.append(alarm2)
@@ -55,6 +59,26 @@ class AlarmListTableViewController: UITableViewController {
         cell.AlarmMode.text = "\(alarm.mode)"
         
         return cell
+        
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            
+            alarms.remove(at: indexPath.row)
+            tableView.beginUpdates()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
+        
+        var itemToMove = alarms[fromIndexPath.row]
+        alarms.remove(at:fromIndexPath.row)
+        alarms.insert(itemToMove, at: to.row)
         
     }
     
