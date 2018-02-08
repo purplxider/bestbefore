@@ -8,29 +8,25 @@
 
 import UIKit
 
-class AlarmViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AlarmViewController: UIViewController {
     
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var datePicker: UIDatePicker!
+    @IBAction func datePickerAction(_ sender: Any) {
+        var dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:mm"
+        var strDate = dateFormatter.string(from: datePicker.date)
+        self.dateLabel.text = strDate
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "settings", for: indexPath)
-        return cell
-    }
     
     
-    
-    @IBOutlet weak var setAlarm: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        setAlarm.dataSource = self
-        setAlarm.delegate = self
-        
-        
         // Do any additional setup after loading the view.
     }
 
