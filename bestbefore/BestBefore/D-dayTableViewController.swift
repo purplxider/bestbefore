@@ -13,7 +13,7 @@ class D_dayTableViewController: UITableViewController {
 
     
     var foods:[Food] = []
-    var sortedFoods:[Food] = []
+
     
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
@@ -56,7 +56,7 @@ class D_dayTableViewController: UITableViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
-        sortedFoods = foods.sorted(by: {$0.dDay > $1.dDay})
+        foods = foods.sorted(by: {$0.dDay > $1.dDay})
     }
     
     override func didReceiveMemoryWarning() {
@@ -81,7 +81,7 @@ class D_dayTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath) as! D_DayTableViewCell
         
         
-        var food = sortedFoods[indexPath.row]
+        var food = foods[indexPath.row]
         
         
         

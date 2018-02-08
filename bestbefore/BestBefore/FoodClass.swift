@@ -9,28 +9,7 @@
 import Foundation
 import UIKit
 
-class Settings {
-    var alarmTimes: Int
-    var alarmTypeBool: Bool
-    var alarmDate: Int
-    
-    func alarmTime() {
-        //alarmTimes만큼 알람 시간 설정
-    }
-    func alarmType() {
-        if alarmTypeBool == true {
-            //소리로 알람
-        } else {
-            //진동으로 알람
-        }
-    }
-    
-    init(alarmTimes:Int, alarmTypeBool: Bool, alarmDate: Int) {
-        self.alarmTimes = alarmTimes
-        self.alarmTypeBool = alarmTypeBool
-        self.alarmDate = alarmDate
-    }
-}
+
 
 class Food {
     var date:String
