@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AlarmListTableViewController: UITableViewController {
+class AlarmListTableViewController: UITableViewController{
     
-    
+    let delegate = UIApplication.shared.delegate as! AppDelegate
     var alarms:[Alarm] = []
     
     
@@ -19,6 +19,8 @@ class AlarmListTableViewController: UITableViewController {
     }
     
     override func viewDidLoad() {
+        self.initializeDataList()
+
         super.viewDidLoad()
         
         var alarm1 = Alarm(time: "08:30", mode: "소리")
@@ -26,10 +28,25 @@ class AlarmListTableViewController: UITableViewController {
         
         alarms.append(alarm1)
         alarms.append(alarm2)
+        
+        self.initializeDataList()
+        
+       
+        
     }
+    
+    func initializeDataList() {
+        alarms = delegate.alarms
+        
+    }
+    
+    
+
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -88,6 +105,9 @@ class AlarmListTableViewController: UITableViewController {
             createAlarm.delegate = self
         }
     }
+    
+    
+    
     
     
     

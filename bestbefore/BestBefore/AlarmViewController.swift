@@ -12,6 +12,9 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     
     var delegate: AlarmListTableViewController?
     
+    
+    
+    
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBAction func datePickerAction(_ sender: Any) {
