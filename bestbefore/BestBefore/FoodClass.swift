@@ -12,12 +12,14 @@ import UIKit
 
 
 class Food {
+    var name:String?
     var date:String
     var dDay:Int
     var foodImage:UIImage
     var foodColor:UIColor
     
-    init (date:String, dDay:Int, foodImage:UIImage, foodColor:UIColor){
+    init (name:String?, date:String, dDay:Int, foodImage:UIImage, foodColor:UIColor){
+        self.name = name
         self.date = date
         self.dDay = dDay
         self.foodImage = foodImage

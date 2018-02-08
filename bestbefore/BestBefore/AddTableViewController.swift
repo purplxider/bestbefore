@@ -17,6 +17,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     let formatter = DateFormatter()
     
     @IBOutlet weak var addImage: UIImageView!
+    @IBOutlet weak var nameTextField: UITextField!
     
     @IBOutlet weak var dateTextField: UITextField!
     @IBAction func setCreate(_ sender: Any) {
@@ -38,7 +39,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
             
             if let addFoodImage = addImage.image {
             
-            listVC.foods.append(Food(date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
+                listVC.foods.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
                 
             }
             

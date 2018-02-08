@@ -35,11 +35,11 @@ class D_dayTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        var food1 = Food(date: "18-02-02 ", dDay: 4, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFD1D1))
-        var food2 = Food(date: "18-02-06", dDay: 0, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFD1))
-        var food3 = Food(date: "18-02-08", dDay: -2, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
-        var food4 = Food(date: "18-02-07", dDay: -1, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
-         var food5 = Food(date: "18-02-20", dDay: -14, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+        var food1 = Food(name: nil, date: "18-02-02 ", dDay: 4, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFD1D1))
+        var food2 = Food(name: nil, date: "18-02-06", dDay: 0, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFD1))
+        var food3 = Food(name: nil, date: "18-02-08", dDay: -2, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+        var food4 = Food(name: nil, date: "18-02-07", dDay: -1, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+        var food5 = Food(name: nil, date: "18-02-20", dDay: -14, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
         
         
         foods.append(food1)
@@ -176,7 +176,7 @@ class D_dayTableViewController: UITableViewController {
         if let indexPath = tableView.indexPathForSelectedRow {
             
             let selectedRow = indexPath.row
-            let vc = segue.destination as? DetailViewController
+            let vc = segue.destination as? DetailTableViewController
             vc?.food = self.foods[selectedRow]
         }
         
