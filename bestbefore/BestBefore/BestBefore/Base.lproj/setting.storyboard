@@ -69,7 +69,7 @@
                     <navigationItem key="navigationItem" title="알람" id="JRe-jc-uTX">
                         <barButtonItem key="rightBarButtonItem" title="저장" id="0D5-MT-5wO">
                             <connections>
-                                <action selector="setAlarm:" destination="HHy-a6-ejh" id="9E8-Uy-GIX"/>
+                                <action selector="setAlarm:" destination="HHy-a6-ejh" id="HIm-49-uEd"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

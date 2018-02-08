@@ -26,9 +26,7 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     
     @IBAction func setAlarm(_ sender: Any) {
         if let alarmListVC = delegate {
-            
-            
-            
+            alarmListVC.alarms.append(Alarm(time: dateLabel.text!, mode: ""))
   
             
             
@@ -36,7 +34,6 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
 //                listVC.foods.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
             
             navigationController?.popViewController(animated: true)
-            
             
         }
         

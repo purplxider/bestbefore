@@ -13,6 +13,7 @@ class AlarmListTableViewController: UITableViewController {
     
     var alarms:[Alarm] = []
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,4 +57,15 @@ class AlarmListTableViewController: UITableViewController {
         return cell
         
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let createAlarmVC = segue.destination as? AlarmViewController
+        if let createAlarm = createAlarmVC {
+            createAlarm.delegate = self
+        }
+    }
+    
+    
+    
+    
 }
