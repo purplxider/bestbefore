@@ -18,6 +18,7 @@
 		66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368CC2022B959000FCD5D /* FoodClass.swift */; };
 		66C695C6202AB756005C15DC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C695C5202AB756005C15DC /* AlarmTableViewController.swift */; };
 		66C695C8202AEC98005C15DC /* AlarmListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */; };
+		66CEC409202C3CBA000F2BD3 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CEC408202C3CBA000F2BD3 /* AlarmTableViewCell.swift */; };
 		66E2B8492029421A00EC0936 /* D-DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */; };
 		66F574AB202BDE4F00F2FBD3 /* AlarmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */; };
 		66F574AF202BF13C00F2FBD3 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */; };
@@ -38,6 +39,7 @@
 		66C368CC2022B959000FCD5D /* FoodClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodClass.swift; sourceTree = "<group>"; };
 		66C695C5202AB756005C15DC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewController.swift; sourceTree = "<group>"; };
+		66CEC408202C3CBA000F2BD3 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D-DayTableViewCell.swift"; sourceTree = "<group>"; };
 		66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClass.swift; sourceTree = "<group>"; };
 		66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				66C368C42022B7AD000FCD5D /* Info.plist */,
 				66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */,
 				66C695C5202AB756005C15DC /* AlarmTableViewController.swift */,
+				66CEC408202C3CBA000F2BD3 /* AlarmTableViewCell.swift */,
 			);
 			path = BestBefore;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */,
 				66C695C8202AEC98005C15DC /* AlarmListTableViewController.swift in Sources */,
 				66B7D186202975B500B5F9D0 /* AddTableViewController.swift in Sources */,
+				66CEC409202C3CBA000F2BD3 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
