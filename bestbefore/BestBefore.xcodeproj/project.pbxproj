@@ -76,6 +76,7 @@
 			children = (
 				66F971D4202ADE8900137605 /* setting.storyboard */,
 				6682E6E7202C2BD900F7C902 /* AlarmViewController.swift */,
+				66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */,
 				66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */,
 				66C368CC2022B959000FCD5D /* FoodClass.swift */,
 				66B7D185202975B500B5F9D0 /* AddTableViewController.swift */,
@@ -89,7 +90,6 @@
 				66C368C42022B7AD000FCD5D /* Info.plist */,
 				66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */,
 				66C695C5202AB756005C15DC /* AlarmTableViewController.swift */,
-				66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */,
 			);
 			path = BestBefore;
 			sourceTree = "<group>";

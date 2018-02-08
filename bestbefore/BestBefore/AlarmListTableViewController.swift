@@ -12,6 +12,11 @@ class AlarmListTableViewController: UITableViewController {
     
 //    var alarms: [Alarm] = []
 
+    var alarmTimes = Date()
+    
+    @IBOutlet weak var alarmTimeLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -84,14 +89,21 @@ class AlarmListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        let createAlarmVC = segue.destination as? AlarmViewController
+        if let createAlarm = createAlarmVC {
+            createAlarm.delegate = self
+            alarmTimeLabel = createAlarm.dateLabel
+        }
+        
     }
-    */
+    
 
 }

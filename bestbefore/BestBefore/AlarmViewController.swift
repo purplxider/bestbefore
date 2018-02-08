@@ -8,9 +8,9 @@
 
 import UIKit
 
-class AlarmViewController: UIViewController {
+class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     
-    
+    var delegate: AlarmListTableViewController?
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
@@ -19,7 +19,47 @@ class AlarmViewController: UIViewController {
         dateFormatter.dateFormat = "HH:mm"
         var strDate = dateFormatter.string(from: datePicker.date)
         self.dateLabel.text = strDate
+        
     }
+    
+    
+    
+    @IBAction func setAlarm(_ sender: Any) {
+        if let alarmListVC = delegate {
+            
+            
+            
+  
+            
+            
+            
+//                listVC.foods.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
+            
+            navigationController?.popViewController(animated: true)
+            
+            
+        }
+        
+    }
+    
+    
+    
+    
+    func getIntervalDays(date: Date?, anotherDay: Date? = nil) -> Double {
+        
+        var interval: Double!
+        
+        if anotherDay == nil {
+            interval = date?.timeIntervalSinceNow
+        } else {
+            interval = date?.timeIntervalSince(anotherDay!)
+        }
+        
+        let r = interval / 86400
+        
+        return floor(r)
+    }
+    
     
     
     
