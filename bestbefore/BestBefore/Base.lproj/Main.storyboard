@@ -9,11 +9,6 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="BradleyHand-Bold.ttf">
-            <string>BradleyHandITCTT-Bold</string>
-        </array>
-    </customFonts>
     <scenes>
         <!--리스트-->
         <scene sceneID="IK2-sV-0gU">
@@ -396,28 +391,25 @@
         <!--automaticAdd-->
         <scene sceneID="C7h-Ux-LKs">
             <objects>
-                <viewController title="automaticAdd" id="eae-DC-qHJ" customClass="TesseractOCRViewController" customModule="BestBefore" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="automaticAdd" title="automaticAdd" id="eae-DC-qHJ" customClass="TesseractOCRViewController" customModule="BestBefore" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="knI-hw-U8g">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="kWo-qu-VNo">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kWo-qu-VNo">
                                 <rect key="frame" x="16" y="76" width="343" height="198"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7e1-ce-RfP">
+                            <navigationBar contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7e1-ce-RfP">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="자동추가" id="xWz-7W-jBe"/>
                                 </items>
                             </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-53-G3F">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-53-G3F">
                                 <rect key="frame" x="153" y="160" width="69" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="이미지 추가"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="eae-DC-qHJ" eventType="touchUpInside" id="Uh2-qr-984"/>
@@ -425,6 +417,16 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="L9G-uJ-e3g" firstAttribute="bottom" secondItem="kWo-qu-VNo" secondAttribute="bottom" constant="393" id="47S-5f-YgH"/>
+                            <constraint firstItem="WYl-53-G3F" firstAttribute="leading" secondItem="L9G-uJ-e3g" secondAttribute="leading" constant="153" id="6at-eA-BHH"/>
+                            <constraint firstItem="L9G-uJ-e3g" firstAttribute="trailing" secondItem="WYl-53-G3F" secondAttribute="trailing" constant="153" id="GH6-1e-KQE"/>
+                            <constraint firstItem="kWo-qu-VNo" firstAttribute="top" secondItem="7e1-ce-RfP" secondAttribute="bottom" constant="12" id="Yyy-d1-mek"/>
+                            <constraint firstItem="WYl-53-G3F" firstAttribute="top" secondItem="7e1-ce-RfP" secondAttribute="bottom" constant="96" id="r01-a8-blj"/>
+                            <constraint firstItem="L9G-uJ-e3g" firstAttribute="trailing" secondItem="kWo-qu-VNo" secondAttribute="trailing" constant="16" id="rHO-cH-zYt"/>
+                            <constraint firstItem="L9G-uJ-e3g" firstAttribute="bottom" secondItem="WYl-53-G3F" secondAttribute="bottom" constant="477" id="xAZ-1f-FY0"/>
+                            <constraint firstItem="kWo-qu-VNo" firstAttribute="leading" secondItem="L9G-uJ-e3g" secondAttribute="leading" constant="16" id="zQt-fT-4cK"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="L9G-uJ-e3g"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="uU1-aD-4g2"/>
@@ -435,76 +437,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tq5-vr-FGB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4262" y="-564"/>
-        </scene>
-        <!--TesseractOCR View Controller-->
-        <scene sceneID="Wnd-wy-GCp">
-            <objects>
-                <viewController storyboardIdentifier="automaticAdd" id="jcz-3t-10k" customClass="TesseractOCRViewController" customModule="BestBefore" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="sr2-h0-WfF"/>
-                        <viewControllerLayoutGuide type="bottom" id="v6J-5d-c5c"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="olD-Pw-jj2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WvG-dS-axc">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iNV-bN-rlS">
-                                        <rect key="frame" x="90" y="157" width="194" height="257"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uL7-HA-ewG">
-                                        <rect key="frame" x="149" y="276" width="77" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="BradleyHandITCTT-Bold" family="Bradley Hand" pointSize="22"/>
-                                        <size key="titleShadowOffset" width="1" height="1"/>
-                                        <state key="normal" title="사진추가">
-                                            <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="disabled">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <state key="selected">
-                                            <color key="titleColor" red="0.67689845469999999" green="0.85872765969999998" blue="0.99221161270000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <state key="highlighted">
-                                            <color key="titleColor" red="0.67689845469999999" green="0.85872765969999998" blue="0.99221161270000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="takePhoto:" destination="jcz-3t-10k" eventType="touchUpInside" id="idH-bI-Hxu"/>
-                                        </connections>
-                                    </button>
-                                    <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NJe-9Y-3yT">
-                                        <rect key="frame" x="0.0" y="19" width="375" height="44"/>
-                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                        <items>
-                                            <navigationItem title="Title" id="fya-ap-VEq"/>
-                                        </items>
-                                    </navigationBar>
-                                </subviews>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <gestureRecognizers/>
-                        <viewLayoutGuide key="safeArea" id="s3h-OY-DHK"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="N1y-Ir-LqA" appends="YES" id="2PC-Il-R2G"/>
-                        </connections>
-                    </view>
-                    <connections>
-                        <outlet property="textView" destination="iNV-bN-rlS" id="mks-Qh-Wcx"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9WL-zj-cO1" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="N1y-Ir-LqA"/>
-            </objects>
-            <point key="canvasLocation" x="3513" y="-564"/>
         </scene>
     </scenes>
 </document>

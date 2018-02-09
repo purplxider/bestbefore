@@ -47,11 +47,10 @@ class TesseractOCRViewController: UIViewController {
         present(activityViewController, animated: true)
     }
     
-    // Tesseract Image Recognition
+    // Tesseract OCR 문자인식
     func performImageRecognition(_ image: UIImage) {
         
-        if let tesseract = G8Tesseract(language: "eng+fra") {
-            tesseract.engineMode = .tesseractCubeCombined
+        if let tesseract = G8Tesseract(language: "eng+kor") {
             tesseract.pageSegmentationMode = .auto
             tesseract.image = image.g8_blackAndWhite()
             tesseract.recognize()
@@ -83,7 +82,7 @@ class TesseractOCRViewController: UIViewController {
 }
 
 // MARK: - UITextFieldDelegate
-extension ViewController: UITextFieldDelegate {
+extension TesseractOCRViewController: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         moveViewUp()
     }
@@ -94,18 +93,18 @@ extension ViewController: UITextFieldDelegate {
 }
 
 // MARK: - UINavigationControllerDelegate
-extension ViewController: UINavigationControllerDelegate {
+extension TesseractOCRViewController: UINavigationControllerDelegate {
 }
 
 // MARK: - UIImagePickerControllerDelegate
-extension ViewController: UIImagePickerControllerDelegate {
+extension TesseractOCRViewController: UIImagePickerControllerDelegate {
     func presentImagePicker() {
         
-        let imagePickerActionSheet = UIAlertController(title: "Snap/Upload Image",
-                                                       message: nil, preferredStyle: .actionSheet)
+        let imagePickerActionSheet = UIAlertController(title: "어디서 사진을 가져올까",
+                                                       message: "골라줘", preferredStyle: .actionSheet)
         
         if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraButton = UIAlertAction(title: "Take Photo",
+            let cameraButton = UIAlertAction(title: "카메라",
                                              style: .default) { (alert) -> Void in
                                                 let imagePicker = UIImagePickerController()
                                                 imagePicker.delegate = self
@@ -115,7 +114,7 @@ extension ViewController: UIImagePickerControllerDelegate {
             imagePickerActionSheet.addAction(cameraButton)
         }
         
-        let libraryButton = UIAlertAction(title: "Choose Existing",
+        let libraryButton = UIAlertAction(title: "사진앨범",
                                           style: .default) { (alert) -> Void in
                                             let imagePicker = UIImagePickerController()
                                             imagePicker.delegate = self
