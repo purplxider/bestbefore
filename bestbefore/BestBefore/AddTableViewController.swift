@@ -46,7 +46,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
             
             
             if let addFoodImage = addImage.image {
-            
+                
                 listVC.foods.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
                 
             }
@@ -94,7 +94,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
         present(picker, animated: false, completion: nil)
     }
     
-
+    
     @IBAction func dismissAddView(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
@@ -217,4 +217,3 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
      */
     
 }
-

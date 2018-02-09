@@ -40,7 +40,7 @@ class D_dayTableViewController: UITableViewController {
         var food3 = Food(name: nil, date: "18-02-08", dDay: -2, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
         var food4 = Food(name: nil, date: "18-02-07", dDay: -1, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
         var food5 = Food(name: nil, date: "18-02-20", dDay: -14, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
-        
+
         
         foods.append(food1)
         foods.append(food2)

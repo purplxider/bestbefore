@@ -20,7 +20,7 @@ class AlarmListTableViewController: UITableViewController{
     
     override func viewDidLoad() {
         self.initializeDataList()
-
+        
         super.viewDidLoad()
         
         var alarm1 = Alarm(time: "08:30", mode: "소리")
@@ -31,7 +31,7 @@ class AlarmListTableViewController: UITableViewController{
         
         self.initializeDataList()
         
-       
+        
         
     }
     
@@ -41,7 +41,7 @@ class AlarmListTableViewController: UITableViewController{
     }
     
     
-
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.tableView.reloadData()
@@ -113,3 +113,4 @@ class AlarmListTableViewController: UITableViewController{
     
     
 }
+
