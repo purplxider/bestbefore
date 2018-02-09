@@ -62,11 +62,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="내 냉장고" id="zRm-lO-lxI">
                         <barButtonItem key="leftBarButtonItem" title="삭제" id="8fB-zL-VOL">
+                            <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="deleteButton:" destination="w9r-rQ-rj6" id="W8H-oK-lx5"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="kRy-Ur-Z5t">
+                            <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <action selector="addAnImage:" destination="w9r-rQ-rj6" id="qB9-X7-F9G"/>
                             </connections>
@@ -81,13 +83,14 @@
         <scene sceneID="8r8-5S-8xF">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="IJV-SR-9wh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="내 냉장고" image="Details Icon" id="Y5Q-ot-cTn"/>
+                    <tabBarItem key="tabBarItem" title="내 냉장고" image="Details Icon-1" id="Y5Q-ot-cTn"/>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="LBD-pV-jkX"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="f66-n4-ONl">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="0.6588235294117647" blue="0.6588235294117647" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -109,7 +112,8 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="9Oa-dJ-f0k">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="IJV-SR-9wh" kind="relationship" relationship="viewControllers" id="Hel-dC-Ww9"/>
@@ -135,11 +139,13 @@
                             <items>
                                 <navigationItem title="수동추가" id="cnA-HQ-hFF">
                                     <barButtonItem key="leftBarButtonItem" title="취소" id="Wht-uK-Imq">
+                                        <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="dismissAddView:" destination="AWM-gK-sVf" id="VfW-Jc-97l"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem key="rightBarButtonItem" title="저장" id="36c-hV-rtf">
+                                        <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <action selector="setCreate:" destination="AWM-gK-sVf" id="0mx-nY-aEy"/>
                                         </connections>
@@ -160,7 +166,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nld-ew-Xwm">
                                                     <rect key="frame" x="153" y="109" width="69" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="이미지 추가"/>
+                                                    <state key="normal" title="이미지 추가">
+                                                        <color key="titleColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="addAnImage:" destination="AWM-gK-sVf" eventType="touchUpInside" id="UWG-TA-CoY"/>
                                                     </connections>
@@ -405,8 +413,12 @@
                             <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <items>
                                 <navigationItem title="자동추가" id="Eo9-mf-XmK">
-                                    <barButtonItem key="leftBarButtonItem" title="취소" id="1Uv-au-4Vl"/>
-                                    <barButtonItem key="rightBarButtonItem" title="저장" id="hQl-o9-WiF"/>
+                                    <barButtonItem key="leftBarButtonItem" title="취소" id="1Uv-au-4Vl">
+                                        <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                    <barButtonItem key="rightBarButtonItem" title="저장" id="hQl-o9-WiF">
+                                        <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                 </navigationItem>
                             </items>
                         </navigationBar>
@@ -430,7 +442,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WYl-53-G3F">
                                                     <rect key="frame" x="153" y="95" width="69" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="이미지 추가"/>
+                                                    <state key="normal" title="이미지 추가">
+                                                        <color key="titleColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    </state>
                                                     <connections>
                                                         <action selector="takePhoto:" destination="vFC-4J-nLu" eventType="touchUpInside" id="LhH-Qm-6SO"/>
                                                     </connections>
@@ -498,6 +512,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Details Icon" width="28" height="21"/>
+        <image name="Details Icon-1" width="33" height="24"/>
     </resources>
 </document>
