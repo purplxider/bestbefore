@@ -25,6 +25,7 @@
 		66E2B8492029421A00EC0936 /* D-DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */; };
 		66F574AB202BDE4F00F2FBD3 /* AlarmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */; };
 		66F574AF202BF13C00F2FBD3 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */; };
+		66F574B9202D37DD00F2FBD3 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574B8202D37DD00F2FBD3 /* DataCenter.swift */; };
 		66F971D6202ADE8900137605 /* setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F971D4202ADE8900137605 /* setting.storyboard */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D-DayTableViewCell.swift"; sourceTree = "<group>"; };
 		66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClass.swift; sourceTree = "<group>"; };
 		66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
+		66F574B8202D37DD00F2FBD3 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		66F971D5202ADE8900137605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BestBefore/Base.lproj/setting.storyboard; sourceTree = "<group>"; };
 		A8B521C4509313A25C0D6BCA /* Pods-BestBefore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBefore.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBefore/Pods-BestBefore.release.xcconfig"; sourceTree = "<group>"; };
 		EFFC7E855CA1BB5B18A17E90 /* Pods_BestBefore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBefore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +95,7 @@
 				66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */,
 				66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */,
 				66C368CC2022B959000FCD5D /* FoodClass.swift */,
+				66F574B8202D37DD00F2FBD3 /* DataCenter.swift */,
 				66B7D185202975B500B5F9D0 /* AddTableViewController.swift */,
 				66C368B82022B7AD000FCD5D /* AppDelegate.swift */,
 				66C368BA2022B7AD000FCD5D /* ViewController.swift */,
@@ -268,6 +271,7 @@
 				66C695C6202AB756005C15DC /* AlarmTableViewController.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
 				66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */,
+				66F574B9202D37DD00F2FBD3 /* DataCenter.swift in Sources */,
 				66C695C8202AEC98005C15DC /* AlarmListTableViewController.swift in Sources */,
 				66B7D186202975B500B5F9D0 /* AddTableViewController.swift in Sources */,
 				66CEC409202C3CBA000F2BD3 /* AlarmTableViewCell.swift in Sources */,

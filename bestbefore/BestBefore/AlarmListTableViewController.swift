@@ -11,7 +11,7 @@ import UIKit
 class AlarmListTableViewController: UITableViewController{
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-    var alarms:[Alarm] = []
+
     
     
     @IBAction func deleteButton(_ sender: Any) {
@@ -19,26 +19,29 @@ class AlarmListTableViewController: UITableViewController{
     }
     
     override func viewDidLoad() {
-        self.initializeDataList()
+        
         
         super.viewDidLoad()
         
-        var alarm1 = Alarm(time: "08:30", mode: "소리")
-        var alarm2 = Alarm(time: "06:30", mode: "진동")
+        if FileManager.default.fileExists(atPath: dataCenter.alarmFilePath) {
+            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: dataCenter.alarmFilePath) as? [Alarm] {
+                dataCenter.alarmArray = unarchArray
+            }
+        } else {
+            
+            var alarm1 = Alarm(time: "08:30", mode: "소리")
+            var alarm2 = Alarm(time: "06:30", mode: "진동")
+            
+            dataCenter.alarmArray.append(alarm1)
+            dataCenter.alarmArray.append(alarm2)
+        }
         
-        alarms.append(alarm1)
-        alarms.append(alarm2)
-        
-        self.initializeDataList()
         
         
         
     }
     
-    func initializeDataList() {
-        alarms = delegate.alarms
-        
-    }
+
     
     
     
@@ -63,13 +66,13 @@ class AlarmListTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return alarms.count
+        return dataCenter.alarmArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "alarm", for: indexPath) as! AlarmTableViewCell
         
-        var alarm = alarms[indexPath.row]
+        var alarm = dataCenter.alarmArray[indexPath.row]
         
         cell.AlarmTime.text = "\(alarm.time)"
         
@@ -84,7 +87,7 @@ class AlarmListTableViewController: UITableViewController{
         if editingStyle == .delete {
             
             
-            alarms.remove(at: indexPath.row)
+            dataCenter.alarmArray.remove(at: indexPath.row)
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
@@ -93,18 +96,13 @@ class AlarmListTableViewController: UITableViewController{
     
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         
-        var itemToMove = alarms[fromIndexPath.row]
-        alarms.remove(at:fromIndexPath.row)
-        alarms.insert(itemToMove, at: to.row)
+        var itemToMove = dataCenter.alarmArray[fromIndexPath.row]
+        dataCenter.alarmArray.remove(at:fromIndexPath.row)
+        dataCenter.alarmArray.insert(itemToMove, at: to.row)
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let createAlarmVC = segue.destination as? AlarmViewController
-        if let createAlarm = createAlarmVC {
-            createAlarm.delegate = self
-        }
-    }
+    
     
     
     

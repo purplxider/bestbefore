@@ -11,7 +11,7 @@ import UIKit
 class AddTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
     
-    var delegate:D_dayTableViewController?
+//    var delegate:DataCenter?
     
     var now = Date()
     let formatter = DateFormatter()
@@ -22,8 +22,8 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     
     @IBOutlet weak var dateTextField: UITextField!
     @IBAction func setCreate(_ sender: Any) {
-        if let listVC = delegate {
-            
+//        if let foodInfo = delegate {
+        
             formatter.dateFormat = "yy-MM-dd"
             
             var foodDate = formatter.date(from: dateTextField.text!)
@@ -43,14 +43,14 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
             
             if let addFoodImage = addImage.image {
                 
-                listVC.foods.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
+                dataCenter.foodArray.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
                 
-                
+           dataCenter.save()
                 
             }
             
-            
-        }
+//    }
+        
         dismiss(animated: true, completion: nil)
     }
     func getIntervalDays(date: Date?, anotherDay: Date? = nil) -> Double {

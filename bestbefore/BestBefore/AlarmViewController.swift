@@ -10,7 +10,7 @@ import UIKit
 
 class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     
-    var delegate: AlarmListTableViewController?
+ 
     
     
     
@@ -28,19 +28,19 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     
     
     @IBAction func setAlarm(_ sender: Any) {
-        if let alarmListVC = delegate {
-            alarmListVC.alarms.append(Alarm(time: dateLabel.text!, mode: ""))
+        
+            dataCenter.alarmArray.append(Alarm(time: dateLabel.text!, mode: ""))
             
             
             
             
             //                listVC.foods.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
-            
+        
             navigationController?.popViewController(animated: true)
-            
+            dataCenter.save()
         }
         
-    }
+    
     
     
     
@@ -65,6 +65,7 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.

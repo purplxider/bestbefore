@@ -11,7 +11,7 @@ import UIKit
 
 
 
-class Food {
+class Food:NSObject, NSCoding {
     var name:String?
     var date:String
     var dDay:Int
@@ -26,37 +26,20 @@ class Food {
         self.foodColor = foodColor
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        
+        self.name = aDecoder.decodeObject(forKey: "name") as? String
+        self.date = aDecoder.decodeObject(forKey: "date") as! String
+        self.dDay = aDecoder.decodeInteger(forKey: "dDay")
+        self.foodImage = aDecoder.decodeObject(forKey: "foodImage") as! UIImage
+        self.foodColor = aDecoder.decodeObject(forKey: "foodColor") as! UIColor
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.name, forKey: "name")
+        aCoder.encode(self.date, forKey: "date")
+        aCoder.encode(self.dDay, forKey: "dDay")
+        aCoder.encode(self.foodImage, forKey: "foodImage")
+        aCoder.encode(self.foodColor, forKey: "foodColor")
+    }
 }
-
-//
-//class AutoItem : Settings {
-//    var bestBeforeDate:String
-//    var autoImage:UIImage
-//
-//    func dday() {
-//        //bestBeforeDate에서 현재 날짜 빼기
-//        //dday가 얼마일때 어떤 색깔로 view 표시
-//    }
-//
-//    init(alarmTimes:Int, alarmTypeBool: Bool, alarmDate: Int, bestBeforeDate:String, autoImage:UIImage) {
-//        self.bestBeforeDate = bestBeforeDate
-//        self.autoImage = autoImage
-//        super.init(alarmTimes: alarmTimes, alarmTypeBool: alarmTypeBool, alarmDate: alarmDate)
-//    }
-//}
-//
-//class ManualItem : Settings {
-//    var date:String
-//    var manualImage:UIImage
-//
-//    func ddayCalculate() {
-//        // date에서 앱 내에 저장된 값으로 디데이 계산
-//    }
-//
-//    init(alarmTimes:Int, alarmTypeBool: Bool, alarmDate: Int, date:String, manualImage:UIImage){
-//        self.date = date
-//        self.manualImage = manualImage
-//        super.init(alarmTimes: alarmTimes, alarmTypeBool: alarmTypeBool, alarmDate: alarmDate)
-//    }
-//}
-

@@ -9,10 +9,6 @@
 import UIKit
 
 class D_dayTableViewController: UITableViewController {
-    
-
-    
-    var foods:[Food] = []
 
     
     
@@ -35,28 +31,31 @@ class D_dayTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        var food1 = Food(name: nil, date: "18-02-02 ", dDay: 4, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFD1D1))
-        var food2 = Food(name: nil, date: "18-02-06", dDay: 0, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFD1))
-        var food3 = Food(name: nil, date: "18-02-08", dDay: -2, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
-        var food4 = Food(name: nil, date: "18-02-07", dDay: -1, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
-        var food5 = Food(name: nil, date: "18-02-20", dDay: -14, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
-
-        
-        foods.append(food1)
-        foods.append(food2)
-        foods.append(food3)
-        foods.append(food4)
-        foods.append(food5)
-       
-        
-        
+        if FileManager.default.fileExists(atPath: dataCenter.filePath) {
+            if let unarchArray = NSKeyedUnarchiver.unarchiveObject(withFile: dataCenter.filePath) as? [Food] {
+                dataCenter.foodArray = unarchArray
+            }
+        } else {
+            var food1 = Food(name: nil, date: "18-02-02 ", dDay: 4, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFD1D1))
+            var food2 = Food(name: nil, date: "18-02-06", dDay: 0, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFD1))
+            var food3 = Food(name: nil, date: "18-02-08", dDay: -2, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+            var food4 = Food(name: nil, date: "18-02-07", dDay: -1, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+            var food5 = Food(name: nil, date: "18-02-20", dDay: -14, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+            
+            
+            dataCenter.foodArray.append(food1)
+            dataCenter.foodArray.append(food2)
+            dataCenter.foodArray.append(food3)
+            dataCenter.foodArray.append(food4)
+            dataCenter.foodArray.append(food5)
+        }
         
     }
     
     
     override func viewWillAppear(_ animated: Bool) {
+        dataCenter.foodArray = dataCenter.foodArray.sorted(by: {$0.dDay > $1.dDay})
         self.tableView.reloadData()
-        foods = foods.sorted(by: {$0.dDay > $1.dDay})
     }
     
     override func didReceiveMemoryWarning() {
@@ -73,7 +72,7 @@ class D_dayTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return foods.count
+        return dataCenter.foodArray.count
     }
     
     
@@ -81,7 +80,7 @@ class D_dayTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "food", for: indexPath) as! D_DayTableViewCell
         
         
-        var food = foods[indexPath.row]
+        var food = dataCenter.foodArray[indexPath.row]
         
         
         
@@ -116,7 +115,7 @@ class D_dayTableViewController: UITableViewController {
         if editingStyle == .delete {
             
             
-            foods.remove(at: indexPath.row)
+            dataCenter.foodArray.remove(at: indexPath.row)
             tableView.beginUpdates()
             tableView.deleteRows(at: [indexPath], with: .automatic)
             tableView.endUpdates()
@@ -147,9 +146,9 @@ class D_dayTableViewController: UITableViewController {
      // Override to support rearranging the table view.
      override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
         
-        var itemToMove = foods[fromIndexPath.row]
-        foods.remove(at:fromIndexPath.row)
-        foods.insert(itemToMove, at: to.row)
+        var itemToMove = dataCenter.foodArray[fromIndexPath.row]
+        dataCenter.foodArray.remove(at:fromIndexPath.row)
+        dataCenter.foodArray.insert(itemToMove, at: to.row)
      
      }
     
@@ -177,14 +176,14 @@ class D_dayTableViewController: UITableViewController {
             
             let selectedRow = indexPath.row
             let vc = segue.destination as? DetailTableViewController
-            vc?.food = self.foods[selectedRow]
+            vc?.food = dataCenter.foodArray[selectedRow]
         }
         
-        let createVC = segue.destination as? AddTableViewController
-        if let create = createVC {
-            create.delegate = self
-        
-        }
+//        let createVC = segue.destination as? AddTableViewController
+//        if let create = createVC {
+//            create.delegate = dataCenter
+//
+//        }
         
     }
     
