@@ -13,39 +13,19 @@ class TesseractOCRViewController: UIViewController {
     
     @IBOutlet weak var textView: UITextView!
     
-    @IBOutlet weak var topMarginConstraint: NSLayoutConstraint!
+    var topMarginConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
     // IBAction methods
-    @IBAction func backgroundTapped(_ sender: Any) {
-        view.endEditing(true)
-    }
-    
     
     @IBAction func takePhoto(_ sender: Any) {
         view.endEditing(true)
         presentImagePicker()
     }
     
-    
-    @IBAction func sharePoem(_ sender: Any) {
-        if textView.text.isEmpty {
-            return
-        }
-        let activityViewController = UIActivityViewController(activityItems:
-            [textView.text], applicationActivities: nil)
-        let excludeActivities:[UIActivityType] = [
-            .assignToContact,
-            .saveToCameraRoll,
-            .addToReadingList,
-            .postToFlickr,
-            .postToVimeo]
-        activityViewController.excludedActivityTypes = excludeActivities
-        present(activityViewController, animated: true)
-    }
     
     // Tesseract OCR 문자인식
     func performImageRecognition(_ image: UIImage) {
@@ -58,7 +38,6 @@ class TesseractOCRViewController: UIViewController {
         }
     }
     
-    // The following methods handle the keyboard resignation/
     // move the view so that the first responders aren't hidden
     func moveViewUp() {
         if topMarginConstraint.constant != 0 {
@@ -81,22 +60,12 @@ class TesseractOCRViewController: UIViewController {
     }
 }
 
-// MARK: - UITextFieldDelegate
-extension TesseractOCRViewController: UITextFieldDelegate {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        moveViewUp()
-    }
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        moveViewDown()
-    }
-}
 
-// MARK: - UINavigationControllerDelegate
+// UINavigationControllerDelegate
 extension TesseractOCRViewController: UINavigationControllerDelegate {
 }
 
-// MARK: - UIImagePickerControllerDelegate
+// UIImagePickerControllerDelegate
 extension TesseractOCRViewController: UIImagePickerControllerDelegate {
     func presentImagePicker() {
         
@@ -164,7 +133,9 @@ extension UIImage {
         return scaledImage
     }
 }
-//    @IBOutlet weak var textView: UITextView!
+
+
+//    @IBOutlt weak var textView: UITextView!
 //
 //    let picker = UIImagePickerController()
 //
