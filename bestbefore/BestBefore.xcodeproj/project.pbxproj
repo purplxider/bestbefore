@@ -20,9 +20,9 @@
 		66C695C6202AB756005C15DC /* AlarmTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C695C5202AB756005C15DC /* AlarmTableViewController.swift */; };
 		66C695C8202AEC98005C15DC /* AlarmListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */; };
 		66CEC409202C3CBA000F2BD3 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CEC408202C3CBA000F2BD3 /* AlarmTableViewCell.swift */; };
-		66CEC429202C5FE9000F2BD3 /* TesseractOCRViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66CEC428202C5FE9000F2BD3 /* TesseractOCRViewController.swift */; };
 		66CEC432202C73FD000F2BD3 /* tessdata in Resources */ = {isa = PBXBuildFile; fileRef = 66CEC431202C73FD000F2BD3 /* tessdata */; };
 		66E2B8492029421A00EC0936 /* D-DayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */; };
+		66E3726F202DA77D00A9C88F /* TesseractOCRTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66E3726E202DA77D00A9C88F /* TesseractOCRTableViewController.swift */; };
 		66F574AB202BDE4F00F2FBD3 /* AlarmClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */; };
 		66F574AF202BF13C00F2FBD3 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */; };
 		66F574B9202D37DD00F2FBD3 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574B8202D37DD00F2FBD3 /* DataCenter.swift */; };
@@ -45,9 +45,9 @@
 		66C695C5202AB756005C15DC /* AlarmTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewController.swift; sourceTree = "<group>"; };
 		66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewController.swift; sourceTree = "<group>"; };
 		66CEC408202C3CBA000F2BD3 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
-		66CEC428202C5FE9000F2BD3 /* TesseractOCRViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesseractOCRViewController.swift; sourceTree = "<group>"; };
 		66CEC431202C73FD000F2BD3 /* tessdata */ = {isa = PBXFileReference; lastKnownFileType = folder; path = tessdata; sourceTree = "<group>"; };
 		66E2B8482029421A00EC0936 /* D-DayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "D-DayTableViewCell.swift"; sourceTree = "<group>"; };
+		66E3726E202DA77D00A9C88F /* TesseractOCRTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesseractOCRTableViewController.swift; sourceTree = "<group>"; };
 		66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClass.swift; sourceTree = "<group>"; };
 		66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewController.swift; sourceTree = "<group>"; };
 		66F574B8202D37DD00F2FBD3 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
@@ -108,7 +108,7 @@
 				66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */,
 				66C695C5202AB756005C15DC /* AlarmTableViewController.swift */,
 				66CEC408202C3CBA000F2BD3 /* AlarmTableViewCell.swift */,
-				66CEC428202C5FE9000F2BD3 /* TesseractOCRViewController.swift */,
+				66E3726E202DA77D00A9C88F /* TesseractOCRTableViewController.swift */,
 			);
 			path = BestBefore;
 			sourceTree = "<group>";
@@ -264,9 +264,9 @@
 				6682E6E8202C2BD900F7C902 /* AlarmViewController.swift in Sources */,
 				66F574AB202BDE4F00F2FBD3 /* AlarmClass.swift in Sources */,
 				66F574AF202BF13C00F2FBD3 /* DetailTableViewController.swift in Sources */,
-				66CEC429202C5FE9000F2BD3 /* TesseractOCRViewController.swift in Sources */,
 				66E2B8492029421A00EC0936 /* D-DayTableViewCell.swift in Sources */,
 				66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */,
+				66E3726F202DA77D00A9C88F /* TesseractOCRTableViewController.swift in Sources */,
 				66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */,
 				66C695C6202AB756005C15DC /* AlarmTableViewController.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
