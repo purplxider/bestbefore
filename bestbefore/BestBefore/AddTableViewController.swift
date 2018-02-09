@@ -41,20 +41,17 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
                 
             }
             
-            
-            
-            
-            
             if let addFoodImage = addImage.image {
                 
                 listVC.foods.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
                 
+                
+                
             }
-            
-            navigationController?.popViewController(animated: true)
             
             
         }
+        dismiss(animated: true, completion: nil)
     }
     func getIntervalDays(date: Date?, anotherDay: Date? = nil) -> Double {
         
@@ -96,7 +93,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     
     
     @IBAction func dismissAddView(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addAnImage(_ sender: Any) {

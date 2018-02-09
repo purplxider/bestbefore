@@ -190,5 +190,39 @@ class D_dayTableViewController: UITableViewController {
     
     
     
+    func manualAddition() {
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "manualAdd")
+        present(nextView, animated: true, completion: nil)
+    }
+
+    func automaticAddition() {
+        let storyboard: UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "automaticAdd")
+        present(nextView, animated: true, completion: nil)
+    }
+    
+    @IBAction func addAnImage(_ sender: Any) {
+        let alert = UIAlertController(title: "어떻게 유통기한을 추가할까", message: "골라줘", preferredStyle: .actionSheet)
+        
+        let automaticAdditon = UIAlertAction(title: "자동추가", style: .default) { (action) in self.automaticAddition()
+        }
+        
+        let manualAddition = UIAlertAction(title: "수동추가", style: .default) { (action) in
+            self.manualAddition()
+        }
+        
+        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alert.addAction(automaticAdditon)
+        alert.addAction(manualAddition)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+        
+        
+    }
+    
+    
 }
 
