@@ -18,6 +18,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     
     @IBOutlet weak var addImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var dDayLabel: UILabel!
     
     @IBOutlet weak var dateTextField: UITextField!
     @IBAction func setCreate(_ sender: Any) {
@@ -31,11 +32,18 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
             
             if getDday > 0 {
                 getColor = UIColorFromRGB(rgbValue: 0xFFD1D1)
+                
             } else if getDday > -2 {
                 getColor = UIColorFromRGB(rgbValue: 0xFEFFD1)
+                
             } else {
                 getColor = UIColorFromRGB(rgbValue: 0xD1FFD3)
+                
             }
+            
+            
+            
+            
             
             if let addFoodImage = addImage.image {
             

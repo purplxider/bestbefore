@@ -21,9 +21,11 @@ class DetailTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         if let myFood = food {
             foodDetailImage.image = myFood.foodImage
-            nameLabel.text = nil
+            nameLabel.text = myFood.name
+            dateLabel.text = myFood.date
             dDayLabel.text = myFood.date
             
             if myFood.dDay < 0 {
