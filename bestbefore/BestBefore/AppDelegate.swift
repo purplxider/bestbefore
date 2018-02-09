@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        UNUserNotificationCenter.current().delegate = self
         
         return true
     }
@@ -34,21 +36,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
-        
-        let app = UIApplication.shared
-        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
-        app.registerUserNotificationSettings(notificationSettings)
-        let alertTime = NSDate().addingTimeInterval(3)
-        let notifyAlarm = UILocalNotification()
-        
-        
-        
-        notifyAlarm.fireDate = alertTime as Date
-        notifyAlarm.timeZone = NSTimeZone.default
-        notifyAlarm.soundName = "bell_tree.mp3"
-        notifyAlarm.alertBody = "important metting in 30 minutes"
-        app.scheduleLocalNotification(notifyAlarm)
-        
+//
+//        let app = UIApplication.shared
+//        let notificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+//        app.registerUserNotificationSettings(notificationSettings)
+//        let alertTime = NSDate().addingTimeInterval(3)
+//        let notifyAlarm = UILocalNotification()
+//
+//
+//
+//        notifyAlarm.fireDate = alertTime as Date
+//        notifyAlarm.timeZone = NSTimeZone.default
+//        notifyAlarm.soundName = "bell_tree.mp3"
+//        notifyAlarm.alertBody = "important metting in 30 minutes"
+//        app.scheduleLocalNotification(notifyAlarm)
+//
         
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
@@ -74,5 +76,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     
+}
+
+
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler(.alert)
+    }
 }
 

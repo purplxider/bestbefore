@@ -11,7 +11,7 @@ import UIKit
 class AlarmListTableViewController: UITableViewController{
     
     let delegate = UIApplication.shared.delegate as! AppDelegate
-
+    
     
     
     @IBAction func deleteButton(_ sender: Any) {

@@ -7,12 +7,10 @@
 //
 
 import UIKit
+import UserNotifications
+
 
 class AlarmViewController: UIViewController, UINavigationControllerDelegate {
-    
- 
-    
-    
     
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -23,22 +21,53 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         var strDate = dateFormatter.string(from: datePicker.date)
         self.dateLabel.text = strDate
         
+      
+        
+      
     }
     
     
     
     @IBAction func setAlarm(_ sender: Any) {
+//
+//        var now = Date()
+//        var interval = getIntervalDays(date: now, anotherDay: datePicker.date) * 86400
         
-            dataCenter.alarmArray.append(Alarm(time: dateLabel.text!, mode: ""))
-            
-            
-            
-            
-            //                listVC.foods.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
+        dataCenter.alarmArray.append(Alarm(time: dateLabel.text!, mode: ""))
+        navigationController?.popViewController(animated: true)
+    
         
-            navigationController?.popViewController(animated: true)
-            dataCenter.save()
+        
+        timedNotifications(inSeconds: 5) { (success) in
+            if success {
+                print("성공")
+            }
         }
+    
+        dataCenter.save()
+    }
+    
+    
+    func timedNotifications(inSeconds: TimeInterval, completion: @escaping (_ Success: Bool) -> ()){
+        
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+        
+        let content = UNMutableNotificationContent()
+        
+        content.title = "유통기한 알림"
+        content.subtitle = "몇개"
+        content.body = "dsfsdf"
+        
+        let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if error != nil {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
+    }
         
     
     
@@ -68,6 +97,13 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         
         super.viewDidLoad()
         
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (success, error) in
+            if error != nil {
+                print("Authorization Unsuccessful")
+            } else {
+                print("Successful")
+            }
+        }
         // Do any additional setup after loading the view.
     }
     
