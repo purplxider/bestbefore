@@ -38,9 +38,16 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         var now = Date()
         
         
-        datedNotifications(dateComponents: now) { (success) in
+        var time = Date()
+        time = datePicker.date
+        
+        
+        
+        
+        datedNotifications(dateComponents: time) { (success) in
             if success {
                 print("성공임")
+                print(time)
             }
         }
     
