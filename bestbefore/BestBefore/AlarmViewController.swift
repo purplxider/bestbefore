@@ -35,8 +35,15 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         
         dataCenter.alarmArray.append(Alarm(time: dateLabel.text!, mode: ""))
         navigationController?.popViewController(animated: true)
-    
+        var now = Date()
         
+        
+        datedNotifications(dateComponents: now) { (success) in
+            if success {
+                print("성공임")
+            }
+        }
+    
         
         timedNotifications(inSeconds: 5) { (success) in
             if success {
@@ -45,6 +52,33 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         }
     
         dataCenter.save()
+    }
+    
+    
+    func datedNotifications(dateComponents: Date, completion: @escaping (_ Success: Bool) -> ()){
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = 10
+        dateComponents.minute = 50
+        
+//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let content = UNMutableNotificationContent()
+        
+        
+        content.title = "유통기한 알림"
+        content.subtitle = "몇개"
+        content.body = "dsfsdf"
+        
+        let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().add(request) { (error) in
+            if error != nil {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
     }
     
     
