@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		11F701BC1FAB4DD1969BCCE1 /* Pods_BestBefore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFFC7E855CA1BB5B18A17E90 /* Pods_BestBefore.framework */; };
 		6682E6E8202C2BD900F7C902 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6682E6E7202C2BD900F7C902 /* AlarmViewController.swift */; };
+		6694C272202DC7A700F4441F /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6694C271202DC7A700F4441F /* Media.xcassets */; };
 		66B7D186202975B500B5F9D0 /* AddTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B7D185202975B500B5F9D0 /* AddTableViewController.swift */; };
 		66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368B82022B7AD000FCD5D /* AppDelegate.swift */; };
 		66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66C368BA2022B7AD000FCD5D /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 /* Begin PBXFileReference section */
 		04897A78C29761FF6F278F7B /* Pods-BestBefore.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBefore.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BestBefore/Pods-BestBefore.debug.xcconfig"; sourceTree = "<group>"; };
 		6682E6E7202C2BD900F7C902 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		6694C271202DC7A700F4441F /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Media.xcassets; path = ../../../../Desktop/video/Media.xcassets; sourceTree = "<group>"; };
 		66B7D185202975B500B5F9D0 /* AddTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTableViewController.swift; sourceTree = "<group>"; };
 		66C368B52022B7AD000FCD5D /* BestBefore.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BestBefore.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66C368B82022B7AD000FCD5D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 		66C368AC2022B7AC000FCD5D = {
 			isa = PBXGroup;
 			children = (
+				6694C271202DC7A700F4441F /* Media.xcassets */,
 				66C368B72022B7AD000FCD5D /* BestBefore */,
 				66C368B62022B7AD000FCD5D /* Products */,
 				998F67C3456DE5BF96660994 /* Pods */,
@@ -196,6 +199,7 @@
 				66C368C02022B7AD000FCD5D /* Assets.xcassets in Resources */,
 				66CEC432202C73FD000F2BD3 /* tessdata in Resources */,
 				66C368BE2022B7AD000FCD5D /* Main.storyboard in Resources */,
+				6694C272202DC7A700F4441F /* Media.xcassets in Resources */,
 				66F971D6202ADE8900137605 /* setting.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
