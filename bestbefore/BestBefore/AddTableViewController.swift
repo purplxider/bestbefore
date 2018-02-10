@@ -19,7 +19,6 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     @IBOutlet weak var addImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dDayLabel: UILabel!
-    
     @IBOutlet weak var dateTextField: UITextField!
     @IBAction func setCreate(_ sender: Any) {
 //        if let foodInfo = delegate {
@@ -29,7 +28,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
             var foodDate = formatter.date(from: dateTextField.text!)
             var getDday = getIntervalDays(date: now, anotherDay: foodDate)
             var getColor:UIColor = UIColorFromRGB(rgbValue: 0xFF0000)
-            
+        
             if getDday > 0 {
                 getColor = UIColorFromRGB(rgbValue: 0xFFD1D1)
                 
@@ -44,7 +43,6 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
             if let addFoodImage = addImage.image {
                 
                 dataCenter.foodArray.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
-                
            dataCenter.save()
                 
             }

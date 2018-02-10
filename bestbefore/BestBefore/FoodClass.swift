@@ -43,3 +43,37 @@ class Food:NSObject, NSCoding {
         aCoder.encode(self.foodColor, forKey: "foodColor")
     }
 }
+
+class DdayFood:NSObject, NSCoding {
+    var dDayFood:[Food] = []
+    
+    init (dDayFood:[Food]) {
+        self.dDayFood = dDayFood
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.dDayFood = aDecoder.decodeObject(forKey: "dDayFood") as! [Food]
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.dDayFood, forKey: "dDayFood")
+
+    }
+    
+}
+
+class RottenFood:NSObject, NSCoding {
+    var rottenFood:[Food] = []
+
+    init (rottenFood:[Food]) {
+        self.rottenFood = rottenFood
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        self.rottenFood = aDecoder.decodeObject(forKey: "rottenFood") as! [Food]
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.rottenFood, forKey: "rottenFood")
+    }
+}

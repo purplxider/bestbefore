@@ -21,9 +21,6 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         var strDate = dateFormatter.string(from: datePicker.date)
         self.dateLabel.text = strDate
         
-      
-        
-      
     }
     
     
@@ -32,10 +29,54 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
 //
 //        var now = Date()
 //        var interval = getIntervalDays(date: now, anotherDay: datePicker.date) * 86400
+        var now = Date()
+        var dateFomatter = DateFormatter()
+        dateFomatter.dateFormat = "yy-MM-dd"
+        var fomattedNow = dateFomatter.string(from: now)
+        
+        var foods:[Food] = dataCenter.foodArray
+        var dDayFoods:[Food] = dataCenter.dDayFoodArray
+        var rottenFoods:[Food] = dataCenter.rottenFoodArray
+        
+        for food in foods {
+            if food.dDay > 0 {
+                if rottenFoods.contains(food) != true {
+                    rottenFoods.append(food)
+                }
+            } else {
+                if rottenFoods.contains(food) {
+                    if let index = rottenFoods.index(of: food) {
+                        rottenFoods.remove(at: index)
+                    }
+                }
+            }
+        }
+        
+       
+        for food in foods {
+            if food.date == fomattedNow {
+                if dDayFoods.contains(food) != true {
+                     dDayFoods.append(food)
+                        print("디데이푸드 추가 결과 \(food.date) \(fomattedNow)")
+                    
+                }
+            } else if food.date != fomattedNow {
+                if dDayFoods.contains(food) {
+                    if let index = dDayFoods.index(of: food) {
+                        dDayFoods.remove(at: index)
+                    }
+                }
+            }
+        }
+        dataCenter.dDayFoodArray = dDayFoods
+        dataCenter.rottenFoodArray = rottenFoods
+        
+        
+        print("디데이푸드 추가 \(dataCenter.dDayFoodArray)")
+        
         
         dataCenter.alarmArray.append(Alarm(time: dateLabel.text!, mode: ""))
         navigationController?.popViewController(animated: true)
-        var now = Date()
         
         
         var time = Date()
@@ -46,13 +87,13 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         
         datedNotifications(dateComponents: time) { (success) in
             if success {
-                print("성공임")
+                print("성공입니다.")
                 print(time)
             }
         }
     
         
-        timedNotifications(inSeconds: 5) { (success) in
+        timedNotifications(inSeconds: 1) { (success) in
             if success {
                 print("성공")
             }
@@ -75,7 +116,7 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         
         content.title = "유통기한 알림"
         content.subtitle = "몇개"
-        content.body = "dsfsdf"
+        content.body = "오늘까지 먹어야할 식품이 \(dataCenter.dDayFoodArray.count)개 있습니다.\n 냉장고에 버려야할 식품이 \(dataCenter.rottenFoodArray.count)개 있습니다. 확인하세요!"
         
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
@@ -97,8 +138,7 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         
         content.title = "유통기한 알림"
         content.subtitle = "몇개"
-        content.body = "dsfsdf"
-        
+        content.body = "오늘까지 먹어야할 식품이 \(dataCenter.dDayFoodArray.count)개 있습니다.\n 냉장고에 버려야할 식품이 \(dataCenter.rottenFoodArray.count)개 있습니다. 확인하세요!"
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
         UNUserNotificationCenter.current().add(request) { (error) in

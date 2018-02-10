@@ -21,10 +21,14 @@ func UIColorFromRGB(rgbValue: UInt) -> UIColor {
 let dataCenter = DataCenter()
 let fileName = "FoodData.txt"
 let alarmFileName = "AlarmData.txt"
+let dDayFoodFileName = "dDayFoodData.txt"
+let rottenFoodFileName = "rottenFoodData.txt"
 
 class DataCenter {
     var foodArray:[Food] = []
     var alarmArray:[Alarm] = []
+    var dDayFoodArray:[Food] = []
+    var rottenFoodArray:[Food] = []
     
     var filePath:String { get {
         
@@ -39,6 +43,20 @@ class DataCenter {
         let alarmDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         
         return alarmDirectory + "/" + alarmFileName
+        }}
+    
+    var dDayFoodFilePath:String { get{
+        
+        let dDayFoodDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        return dDayFoodDirectory + "/" + dDayFoodFileName
+        }}
+    
+    var rottenFoodFilePath:String { get{
+        
+        let rottenFoodDirectory = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        return rottenFoodDirectory + "/" + rottenFoodFileName
         }}
     
     init() {
@@ -67,5 +85,9 @@ class DataCenter {
     func save() {
         NSKeyedArchiver.archiveRootObject(self.foodArray, toFile: self.filePath)
         NSKeyedArchiver.archiveRootObject(self.alarmArray, toFile: self.alarmFilePath)
+        NSKeyedArchiver.archiveRootObject(self.dDayFoodArray, toFile: self.dDayFoodFilePath)
+        NSKeyedArchiver.archiveRootObject(self.rottenFoodArray, toFile: self.rottenFoodFilePath)
+        
+
     }
 }
