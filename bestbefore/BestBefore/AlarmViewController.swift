@@ -97,11 +97,6 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         }
     
         
-        timedNotifications(inSeconds: 1) { (success) in
-            if success {
-                print("성공")
-            }
-        }
     
         dataCenter.save()
     }
@@ -122,23 +117,30 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         var hour = hourFomatter.string(from: pickeredTime)
         var minute = minFomatter.string(from: pickeredTime)
         
-        var time = DateComponents()
-        time.hour = Int(hour)
-        time.minute = Int(minute)
+//        var time = DateComponents()
+//        time.hour = Int(hour)
+//        time.minute = Int(minute)
+//
+//        dateComponents.hour = time.hour
+//        dateComponents.minute = time.minute
+//        dateComponents.second = 0
+//        dateComponents.isLeapMonth = true
+//        print("\(dateComponents) 제발좀")
+//
+//        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+//        let content = UNMutableNotificationContent()
+        var daily = DateComponents()
+        daily.hour = Int(hour)
+        daily.minute = Int(minute)
         
-        dateComponents.hour = time.hour
-        dateComponents.minute = time.minute
-        dateComponents.second = 0
-        dateComponents.isLeapMonth = true
-        print("\(dateComponents) 제발좀")
-        
-        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: daily, repeats: true)
         let content = UNMutableNotificationContent()
+        
+        let nextDate = trigger.nextTriggerDate()
         
         
         content.title = "유통기한 알림"
-        content.subtitle = "몇개"
-        content.body = "오늘까지 먹어야할 식품이 \(dataCenter.dDayFoodArray.count)개 있습니다.\n 냉장고에 버려야할 식품이 \(dataCenter.rottenFoodArray.count)개 있습니다. 확인하세요!"
+        content.body = "오늘까지 먹어야할 식품이 \(dataCenter.dDayFoodArray.count)개 있습니다.\n유통기한이 지난 식품이 \(dataCenter.rottenFoodArray.count)개 있습니다. 확인하세요!"
         
         let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
         
@@ -152,54 +154,6 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     
-    func timedNotifications(inSeconds: TimeInterval, completion: @escaping (_ Success: Bool) -> ()){
-        
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
-        
-        let content = UNMutableNotificationContent()
-        
-        content.title = "유통기한 알림"
-        content.subtitle = "몇개"
-        content.body = "오늘까지 먹어야할 식품이 \(dataCenter.dDayFoodArray.count)개 있습니다.\n 냉장고에 버려야할 식품이 \(dataCenter.rottenFoodArray.count)개 있습니다. 확인하세요!"
-        let request = UNNotificationRequest(identifier: "customNotification", content: content, trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) { (error) in
-            if error != nil {
-                completion(false)
-            } else {
-                completion(true)
-            }
-        }
-    }
-        
-    
-    func getCalcDate(hour: Int, min: Int, sec: Int, baseDate: String? = nil) -> Date {
-        
-        let formatter = DateFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "ko_KR") as Locale
-        formatter.dateFormat = "HH:mm:ss"
-        
-        var components = DateComponents()
-        components.setValue(hour, for: Calendar.Component.hour)
-        components.setValue(min, for: Calendar.Component.minute)
-        components.setValue(sec, for: Calendar.Component.second)
-        
-        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
-        
-        let base: Date?
-        
-        if let _ = baseDate {
-            if let _ = formatter.date(from: baseDate!) {
-                base = formatter.date(from: baseDate!)!
-            } else {
-                print("baseDate날짜 변환 실패")
-                base = Date()
-            }
-        } else {
-            base = Date()
-        }
-        return calendar.date(byAdding: components, to: base!)!
-    }
     
     
     
