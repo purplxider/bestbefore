@@ -8,9 +8,13 @@
 
 import UIKit
 import UserNotifications
+import Foundation
 
 
 class AlarmViewController: UIViewController, UINavigationControllerDelegate {
+    
+    
+    
     
     
     @IBOutlet weak var dateLabel: UILabel!
@@ -24,7 +28,7 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     }
     
     
-    
+    //저장하는 버튼
     @IBAction func setAlarm(_ sender: Any) {
 //
 //        var now = Date()
@@ -42,6 +46,8 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
             if food.dDay > 0 {
                 if rottenFoods.contains(food) != true {
                     rottenFoods.append(food)
+                    print("버릴식품 추가 결과 \(food.dDay) \(fomattedNow)")
+
                 }
             } else {
                 if rottenFoods.contains(food) {
@@ -57,7 +63,7 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
             if food.date == fomattedNow {
                 if dDayFoods.contains(food) != true {
                      dDayFoods.append(food)
-                        print("디데이푸드 추가 결과 \(food.date) \(fomattedNow)")
+                    print("디데이푸드 추가 결과 \(food.date) \(fomattedNow)")
                     
                 }
             } else if food.date != fomattedNow {
@@ -78,17 +84,15 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         dataCenter.alarmArray.append(Alarm(time: dateLabel.text!, mode: ""))
         navigationController?.popViewController(animated: true)
         
+      
         
-        var time = Date()
-        time = datePicker.date
+        var datecomponents = DateComponents()
         
-        
-        
-        
-        datedNotifications(dateComponents: time) { (success) in
+
+        datedNotifications(dateComponents: datecomponents) { (success) in
             if success {
                 print("성공입니다.")
-                print(time)
+                
             }
         }
     
@@ -102,14 +106,32 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
         dataCenter.save()
     }
     
-    
-    func datedNotifications(dateComponents: Date, completion: @escaping (_ Success: Bool) -> ()){
+    //로컬 알림 함수
+    func datedNotifications(dateComponents: DateComponents, completion: @escaping (_ Success: Bool) -> ()){
+        let local = UILocalNotification()
         
         var dateComponents = DateComponents()
-        dateComponents.hour = 10
-        dateComponents.minute = 50
+        var pickeredTime = self.datePicker.date
         
-//        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: inSeconds, repeats: false)
+        
+        var hourFomatter = DateFormatter()
+        hourFomatter.dateFormat = "HH"
+        var minFomatter = DateFormatter()
+        minFomatter.dateFormat = "mm"
+        
+        var hour = hourFomatter.string(from: pickeredTime)
+        var minute = minFomatter.string(from: pickeredTime)
+        
+        var time = DateComponents()
+        time.hour = Int(hour)
+        time.minute = Int(minute)
+        
+        dateComponents.hour = time.hour
+        dateComponents.minute = time.minute
+        dateComponents.second = 0
+        dateComponents.isLeapMonth = true
+        print("\(dateComponents) 제발좀")
+        
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
         let content = UNMutableNotificationContent()
         
@@ -151,23 +173,32 @@ class AlarmViewController: UIViewController, UINavigationControllerDelegate {
     }
         
     
-    
-    
-    
-    
-    func getIntervalDays(date: Date?, anotherDay: Date? = nil) -> Double {
+    func getCalcDate(hour: Int, min: Int, sec: Int, baseDate: String? = nil) -> Date {
         
-        var interval: Double!
+        let formatter = DateFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "ko_KR") as Locale
+        formatter.dateFormat = "HH:mm:ss"
         
-        if anotherDay == nil {
-            interval = date?.timeIntervalSinceNow
+        var components = DateComponents()
+        components.setValue(hour, for: Calendar.Component.hour)
+        components.setValue(min, for: Calendar.Component.minute)
+        components.setValue(sec, for: Calendar.Component.second)
+        
+        let calendar = Calendar(identifier: Calendar.Identifier.gregorian)
+        
+        let base: Date?
+        
+        if let _ = baseDate {
+            if let _ = formatter.date(from: baseDate!) {
+                base = formatter.date(from: baseDate!)!
+            } else {
+                print("baseDate날짜 변환 실패")
+                base = Date()
+            }
         } else {
-            interval = date?.timeIntervalSince(anotherDay!)
+            base = Date()
         }
-        
-        let r = interval / 86400
-        
-        return floor(r)
+        return calendar.date(byAdding: components, to: base!)!
     }
     
     
