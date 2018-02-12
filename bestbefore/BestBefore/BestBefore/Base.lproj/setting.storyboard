@@ -162,6 +162,7 @@
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mn5-A4-2cK">
                                                     <rect key="frame" x="310" y="6" width="49" height="31"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="onTintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </switch>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="다시알림" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4V5-wj-xDW">
                                                     <rect key="frame" x="16" y="11" width="59" height="21"/>
@@ -219,7 +220,7 @@
                                                 <constraint firstAttribute="width" constant="108" id="nlB-P3-UEG"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lcj-iw-lGW">
@@ -228,6 +229,7 @@
                                                 <constraint firstAttribute="width" constant="47" id="FvA-iG-lD4"/>
                                                 <constraint firstAttribute="height" constant="31" id="WSE-wv-2tz"/>
                                             </constraints>
+                                            <color key="onTintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </switch>
                                     </subviews>
                                     <constraints>
@@ -245,7 +247,6 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="AlarmMode" destination="rQw-WP-NEv" id="XQK-z4-y4i"/>
                                     <outlet property="AlarmTime" destination="YbB-EC-pYV" id="b8T-KR-4Fz"/>
                                 </connections>
                             </tableViewCell>
@@ -263,7 +264,7 @@
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="rPl-iJ-2TG">
-                            <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="tintColor" red="1" green="0.61960784313725492" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
                                 <segue destination="cWx-vB-geF" kind="show" id="zxc-03-xNu">
                                     <nil key="action"/>

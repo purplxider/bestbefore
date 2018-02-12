@@ -36,11 +36,11 @@ class D_dayTableViewController: UITableViewController {
                 dataCenter.foodArray = unarchArray
             }
         } else {
-            var food1 = Food(name: nil, date: "18-02-02 ", dDay: 4, foodImage: #imageLiteral(resourceName: "food1"), foodColor: UIColorFromRGB(rgbValue: 0xFFD1D1))
-            var food2 = Food(name: nil, date: "18-02-06", dDay: 0, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFD1))
-            var food3 = Food(name: nil, date: "18-02-08", dDay: -2, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
-            var food4 = Food(name: nil, date: "18-02-07", dDay: -1, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
-            var food5 = Food(name: nil, date: "18-02-20", dDay: -14, foodImage: #imageLiteral(resourceName: "food3"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+            var food1 = Food(name: nil, date: "2018-02-02 ", dDay: 10, foodImage: #imageLiteral(resourceName: "milk"), foodColor: UIColorFromRGB(rgbValue: 0xFFD1D1))
+            var food2 = Food(name: nil, date: "2018-02-06", dDay: 6, foodImage: #imageLiteral(resourceName: "food2"), foodColor: UIColorFromRGB(rgbValue: 0xFEFFD1))
+            var food3 = Food(name: nil, date: "2018-02-12", dDay: 0, foodImage: #imageLiteral(resourceName: "eggs"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+            var food4 = Food(name: nil, date: "2018-02-15", dDay: -3, foodImage: #imageLiteral(resourceName: "meat"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
+            var food5 = Food(name: nil, date: "2018-02-20", dDay: -8, foodImage: #imageLiteral(resourceName: "sweetcorn"), foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3))
             
             
             dataCenter.foodArray.append(food1)

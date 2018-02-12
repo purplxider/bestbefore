@@ -76,7 +76,7 @@ class AlarmListTableViewController: UITableViewController{
         
         cell.AlarmTime.text = "\(alarm.time)"
         
-        cell.AlarmMode.text = "\(alarm.mode)"
+//        cell.AlarmMode.text = "\(alarm.mode)"
         
         return cell
         
