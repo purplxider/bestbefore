@@ -28,6 +28,12 @@
 		66F574AF202BF13C00F2FBD3 /* DetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574AE202BF13C00F2FBD3 /* DetailTableViewController.swift */; };
 		66F574B9202D37DD00F2FBD3 /* DataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66F574B8202D37DD00F2FBD3 /* DataCenter.swift */; };
 		66F971D6202ADE8900137605 /* setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66F971D4202ADE8900137605 /* setting.storyboard */; };
+		BC3A2ECF209F6EF50015E288 /* imageEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC3A2ECE209F6EF50015E288 /* imageEditViewController.swift */; };
+		BCFF5A6020B5DA4C006642F1 /* CropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A5F20B5DA4C006642F1 /* CropViewController.swift */; };
+		BCFF5A6220B5DA80006642F1 /* CropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A6120B5DA80006642F1 /* CropView.swift */; };
+		BCFF5A6420B5DACB006642F1 /* CropRectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A6320B5DACB006642F1 /* CropRectView.swift */; };
+		BCFF5A6620B5DB06006642F1 /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A6520B5DB06006642F1 /* ResizeControl.swift */; };
+		BCFF5A6820B5DB40006642F1 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A6720B5DB40006642F1 /* UIImage+Crop.swift */; };
 		D79AB0BA202EC9DD00109C97 /* willAlertFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79AB0B9202EC9DD00109C97 /* willAlertFood.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +62,14 @@
 		66F574B8202D37DD00F2FBD3 /* DataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataCenter.swift; sourceTree = "<group>"; };
 		66F971D5202ADE8900137605 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = BestBefore/Base.lproj/setting.storyboard; sourceTree = "<group>"; };
 		A8B521C4509313A25C0D6BCA /* Pods-BestBefore.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BestBefore.release.xcconfig"; path = "Pods/Target Support Files/Pods-BestBefore/Pods-BestBefore.release.xcconfig"; sourceTree = "<group>"; };
+		BC3A2ECE209F6EF50015E288 /* imageEditViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageEditViewController.swift; sourceTree = "<group>"; };
+		BCFF5A5F20B5DA4C006642F1 /* CropViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropViewController.swift; sourceTree = "<group>"; };
+		BCFF5A6120B5DA80006642F1 /* CropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropView.swift; sourceTree = "<group>"; };
+		BCFF5A6320B5DACB006642F1 /* CropRectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CropRectView.swift; sourceTree = "<group>"; };
+		BCFF5A6520B5DB06006642F1 /* ResizeControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeControl.swift; sourceTree = "<group>"; };
+		BCFF5A6720B5DB40006642F1 /* UIImage+Crop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Crop.swift"; sourceTree = "<group>"; };
+		BCFF5A6A20B5DEE5006642F1 /* BestBefore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BestBefore-Bridging-Header.h"; sourceTree = "<group>"; };
+		BCFF5A6E20B5DF7B006642F1 /* CropViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CropViewController.h; sourceTree = "<group>"; };
 		D79AB0B9202EC9DD00109C97 /* willAlertFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = willAlertFood.swift; sourceTree = "<group>"; };
 		EFFC7E855CA1BB5B18A17E90 /* Pods_BestBefore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBefore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -98,6 +112,7 @@
 				66F971D4202ADE8900137605 /* setting.storyboard */,
 				6682E6E7202C2BD900F7C902 /* AlarmViewController.swift */,
 				66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */,
+				BC3A2ECE209F6EF50015E288 /* imageEditViewController.swift */,
 				66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */,
 				66C368CC2022B959000FCD5D /* FoodClass.swift */,
 				D79AB0B9202EC9DD00109C97 /* willAlertFood.swift */,
@@ -115,6 +130,13 @@
 				66C695C5202AB756005C15DC /* AlarmTableViewController.swift */,
 				66CEC408202C3CBA000F2BD3 /* AlarmTableViewCell.swift */,
 				66E3726E202DA77D00A9C88F /* TesseractOCRTableViewController.swift */,
+				BCFF5A6E20B5DF7B006642F1 /* CropViewController.h */,
+				BCFF5A6320B5DACB006642F1 /* CropRectView.swift */,
+				BCFF5A6520B5DB06006642F1 /* ResizeControl.swift */,
+				BCFF5A6720B5DB40006642F1 /* UIImage+Crop.swift */,
+				BCFF5A6120B5DA80006642F1 /* CropView.swift */,
+				BCFF5A5F20B5DA4C006642F1 /* CropViewController.swift */,
+				BCFF5A6A20B5DEE5006642F1 /* BestBefore-Bridging-Header.h */,
 			);
 			path = BestBefore;
 			sourceTree = "<group>";
@@ -166,11 +188,12 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = 0;
 				TargetAttributes = {
 					66C368B42022B7AD000FCD5D = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -268,9 +291,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC3A2ECF209F6EF50015E288 /* imageEditViewController.swift in Sources */,
 				6682E6E8202C2BD900F7C902 /* AlarmViewController.swift in Sources */,
+				BCFF5A6420B5DACB006642F1 /* CropRectView.swift in Sources */,
 				66F574AB202BDE4F00F2FBD3 /* AlarmClass.swift in Sources */,
 				66F574AF202BF13C00F2FBD3 /* DetailTableViewController.swift in Sources */,
+				BCFF5A6620B5DB06006642F1 /* ResizeControl.swift in Sources */,
 				66E2B8492029421A00EC0936 /* D-DayTableViewCell.swift in Sources */,
 				66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */,
 				66E3726F202DA77D00A9C88F /* TesseractOCRTableViewController.swift in Sources */,
@@ -278,8 +304,11 @@
 				66C695C6202AB756005C15DC /* AlarmTableViewController.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
 				66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */,
+				BCFF5A6020B5DA4C006642F1 /* CropViewController.swift in Sources */,
 				66F574B9202D37DD00F2FBD3 /* DataCenter.swift in Sources */,
 				66C695C8202AEC98005C15DC /* AlarmListTableViewController.swift in Sources */,
+				BCFF5A6220B5DA80006642F1 /* CropView.swift in Sources */,
+				BCFF5A6820B5DB40006642F1 /* UIImage+Crop.swift in Sources */,
 				D79AB0BA202EC9DD00109C97 /* willAlertFood.swift in Sources */,
 				66B7D186202975B500B5F9D0 /* AddTableViewController.swift in Sources */,
 				66CEC409202C3CBA000F2BD3 /* AlarmTableViewCell.swift in Sources */,
@@ -330,6 +359,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -337,6 +367,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -370,6 +401,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_BRIDGING_HEADER = "BestBefore/BestBefore-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -388,6 +420,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -395,6 +428,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -420,6 +454,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OBJC_BRIDGING_HEADER = "BestBefore/BestBefore-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -430,6 +465,7 @@
 			baseConfigurationReference = 04897A78C29761FF6F278F7B /* Pods-BestBefore.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87W7XLLWC3;
 				ENABLE_BITCODE = NO;
@@ -437,6 +473,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BestBefore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BestBefore/BestBefore-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -447,6 +485,7 @@
 			baseConfigurationReference = A8B521C4509313A25C0D6BCA /* Pods-BestBefore.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 87W7XLLWC3;
 				ENABLE_BITCODE = NO;
@@ -454,6 +493,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.BestBefore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BestBefore/BestBefore-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
