@@ -8,7 +8,17 @@
 
 import UIKit
 
-class D_dayTableViewController: UITableViewController {
+class D_dayTableViewController: UITableViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, CropViewControllerDelegate {
+    func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage) {
+    }
+    
+    func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect) {
+    }
+    
+    func cropViewControllerDidCancel(_ controller: CropViewController) {
+        
+    }
+    
 
     
     
@@ -201,10 +211,20 @@ class D_dayTableViewController: UITableViewController {
         present(nextView, animated: true, completion: nil)
     }
     
+    func showCamera() {
+        let controller = UIImagePickerController()
+        controller.delegate = self
+        controller.sourceType = .camera
+        present(controller, animated: true, completion: nil)
+    }
+    
     @IBAction func addAnImage(_ sender: Any) {
         let alert = UIAlertController(title: "어떻게 유통기한을 추가할까", message: "골라줘", preferredStyle: .actionSheet)
         
-        let automaticAdditon = UIAlertAction(title: "자동추가", style: .default) { (action) in self.automaticAddition()
+        let automaticAdditon = UIAlertAction(title: "자동추가", style: .default) { (action) in
+            //self.automaticAddition() //수정해야할 부분 => imageEditVeiw로 가야함
+            self.performSegue(withIdentifier: "imageEdit", sender: self)
+            //self.showCamera()
         }
         
         let manualAddition = UIAlertAction(title: "수동추가", style: .default) { (action) in
