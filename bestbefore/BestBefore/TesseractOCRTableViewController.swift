@@ -30,41 +30,12 @@ class TesseractOCRTableViewController: UITableViewController {
     // Tesseract OCR 문자인식
     func performImageRecognition(_ image: UIImage) {
         
-        if let tesseract = G8Tesseract(language: "eng") {
+        if let tesseract = G8Tesseract(language: "eng+kor") {
             tesseract.pageSegmentationMode = .auto
             tesseract.image = image.g8_blackAndWhite()
             tesseract.recognize()
-            let tempText = tesseract.recognizedText
-            guard let editTempText = tempText else {
-                return
-            }
-            let editText: NSString = editTempText as NSString
-            let resultText = censorText(text: editText)
-            
-            textView.text = resultText
+            textView.text = tesseract.recognizedText
         }
-    }
-    
-    func censorText(text: NSString) -> String {
-        var editText: NSString = text
-        editText = editText.replacingOccurrences(of: ".", with: "-") as NSString
-        editText = editText.replacingOccurrences(of: "/", with: "-") as NSString
-        editText = editText.replacingOccurrences(of: " ", with: "-") as NSString
-        editText = editText.replacingOccurrences(of: "JAN", with: "01") as NSString
-        editText = editText.replacingOccurrences(of: "FEB", with: "02") as NSString
-        editText = editText.replacingOccurrences(of: "MAR", with: "03") as NSString
-        editText = editText.replacingOccurrences(of: "APR", with: "04") as NSString
-        editText = editText.replacingOccurrences(of: "MAY", with: "05") as NSString
-        editText = editText.replacingOccurrences(of: "JUN", with: "06") as NSString
-        editText = editText.replacingOccurrences(of: "JUL", with: "07") as NSString
-        editText = editText.replacingOccurrences(of: "AUG", with: "08") as NSString
-        editText = editText.replacingOccurrences(of: "SEP", with: "09") as NSString
-        editText = editText.replacingOccurrences(of: "OCT", with: "10") as NSString
-        editText = editText.replacingOccurrences(of: "NOV", with: "11") as NSString
-        editText = editText.replacingOccurrences(of: "DEC", with: "12") as NSString
-        
-        let resultText = editText as String
-        return resultText
     }
     
     // move the view so that the first responders aren't hidden
