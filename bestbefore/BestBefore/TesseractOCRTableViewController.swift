@@ -34,19 +34,17 @@ class TesseractOCRTableViewController: UITableViewController {
             tesseract.pageSegmentationMode = .auto
             tesseract.image = image.g8_blackAndWhite()
             tesseract.recognize()
-            let tempText = tesseract.recognizedText
-            guard let editTempText = tempText else {
-                return
-            }
-            let editText: NSString = editTempText as NSString
-            let resultText = censorText(text: editText)
+            let resultText = censorText(text: tesseract.recognizedText)
             
             textView.text = resultText
         }
     }
     
-    func censorText(text: NSString) -> String {
-        var editText: NSString = text
+    func censorText(text: String?) -> String {
+        guard let tempText = text else {
+            return "FAIL"
+        }
+        var editText: NSString = tempText as NSString
         editText = editText.replacingOccurrences(of: ".", with: "-") as NSString
         editText = editText.replacingOccurrences(of: "/", with: "-") as NSString
         editText = editText.replacingOccurrences(of: " ", with: "-") as NSString

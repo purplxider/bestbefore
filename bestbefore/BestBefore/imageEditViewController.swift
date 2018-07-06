@@ -28,6 +28,10 @@ class imageEditViewController : UIViewController, UINavigationControllerDelegate
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+
+    @IBAction func saveAndClose(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
     @IBAction func openEditor(_ sender: UIBarButtonItem?) {
         guard let image = imageView.image else {
@@ -109,14 +113,41 @@ class imageEditViewController : UIViewController, UINavigationControllerDelegate
 //           imageView.image = image
         //        updateEditButtonEnabled()
         
-        if let tesseract = G8Tesseract(language: "end+kor"){
+        if let tesseract = G8Tesseract(language: "eng"){
             tesseract.pageSegmentationMode = .auto
             tesseract.image = image.g8_blackAndWhite()
             tesseract.recognize()
-            dataCenter.foodArray.append(Food(name:"cropping test", date: tesseract.recognizedText, dDay: 1, foodImage: image, foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3)))
+            let recognizedText = censorText(text: tesseract.recognizedText)
+            dataCenter.foodArray.append(Food(name:"cropping test", date: recognizedText, dDay: 1, foodImage: image, foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3)))
         }
 //        dataCenter.foodArray.append(Food(name:"cropping test", date: "test", dDay: 1, foodImage: image, foodColor: UIColorFromRGB(rgbValue: 0xD1FFD3)))
         //여기서 크롭된 사진 저장됨 image 변수로
+    }
+    
+    
+    func censorText(text: String?) -> String {
+        guard let tempText = text else {
+            return "FAIL"
+        }
+        var editText: NSString = tempText as NSString
+        editText = editText.replacingOccurrences(of: ".", with: "-") as NSString
+        editText = editText.replacingOccurrences(of: "/", with: "-") as NSString
+        editText = editText.replacingOccurrences(of: " ", with: "-") as NSString
+        editText = editText.replacingOccurrences(of: "JAN", with: "01") as NSString
+        editText = editText.replacingOccurrences(of: "FEB", with: "02") as NSString
+        editText = editText.replacingOccurrences(of: "MAR", with: "03") as NSString
+        editText = editText.replacingOccurrences(of: "APR", with: "04") as NSString
+        editText = editText.replacingOccurrences(of: "MAY", with: "05") as NSString
+        editText = editText.replacingOccurrences(of: "JUN", with: "06") as NSString
+        editText = editText.replacingOccurrences(of: "JUL", with: "07") as NSString
+        editText = editText.replacingOccurrences(of: "AUG", with: "08") as NSString
+        editText = editText.replacingOccurrences(of: "SEP", with: "09") as NSString
+        editText = editText.replacingOccurrences(of: "OCT", with: "10") as NSString
+        editText = editText.replacingOccurrences(of: "NOV", with: "11") as NSString
+        var editNumText = editText.replacingOccurrences(of: "DEC", with: "12") as String
+        editNumText = editNumText.westernArabicNumeralsOnly
+        
+        return editNumText
     }
     
     func cropViewController(_ controller: CropViewController, didFinishCroppingImage image: UIImage, transform: CGAffineTransform, cropRect: CGRect) {

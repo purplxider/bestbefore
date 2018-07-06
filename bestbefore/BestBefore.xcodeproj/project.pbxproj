@@ -35,6 +35,7 @@
 		BCFF5A6620B5DB06006642F1 /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A6520B5DB06006642F1 /* ResizeControl.swift */; };
 		BCFF5A6820B5DB40006642F1 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A6720B5DB40006642F1 /* UIImage+Crop.swift */; };
 		D79AB0BA202EC9DD00109C97 /* willAlertFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79AB0B9202EC9DD00109C97 /* willAlertFood.swift */; };
+		EC8CE3B220EE50B0002AEB91 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8CE3B120EE50B0002AEB91 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		BCFF5A6A20B5DEE5006642F1 /* BestBefore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BestBefore-Bridging-Header.h"; sourceTree = "<group>"; };
 		BCFF5A6E20B5DF7B006642F1 /* CropViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CropViewController.h; sourceTree = "<group>"; };
 		D79AB0B9202EC9DD00109C97 /* willAlertFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = willAlertFood.swift; sourceTree = "<group>"; };
+		EC8CE3B120EE50B0002AEB91 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		EFFC7E855CA1BB5B18A17E90 /* Pods_BestBefore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBefore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +115,7 @@
 				6682E6E7202C2BD900F7C902 /* AlarmViewController.swift */,
 				66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */,
 				BC3A2ECE209F6EF50015E288 /* imageEditViewController.swift */,
+				EC8CE3B120EE50B0002AEB91 /* StringExtension.swift */,
 				66F574AA202BDE4F00F2FBD3 /* AlarmClass.swift */,
 				66C368CC2022B959000FCD5D /* FoodClass.swift */,
 				D79AB0B9202EC9DD00109C97 /* willAlertFood.swift */,
@@ -311,6 +314,7 @@
 				BCFF5A6820B5DB40006642F1 /* UIImage+Crop.swift in Sources */,
 				D79AB0BA202EC9DD00109C97 /* willAlertFood.swift in Sources */,
 				66B7D186202975B500B5F9D0 /* AddTableViewController.swift in Sources */,
+				EC8CE3B220EE50B0002AEB91 /* StringExtension.swift in Sources */,
 				66CEC409202C3CBA000F2BD3 /* AlarmTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
