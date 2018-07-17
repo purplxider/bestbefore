@@ -46,6 +46,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         print("Executing viewDidLoad")
         super.viewDidLoad()
+        self.goToLiveView()
         self.view.backgroundColor = .black  // chaging the background of my main view to black if there's any real estate left uncovered.
         voiceOver = VoiceOver(viewController: self) // initializes voice over object for this view controller
         camera = Camera(viewController: self) // initializes camera object for this view controller
@@ -106,7 +107,7 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
                 subview.removeFromSuperview()
             }
         }
-        
+        self.navigationController?.popViewController(animated: true)
         if self.appState != .background { // if this cleanup call was initiated by App Delegate, then the state will have been updated to background before this call. In that case, do not execute live view, for it will run on DidBecomeActive.
             self.goToLiveView()
         }
