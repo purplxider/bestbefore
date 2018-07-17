@@ -35,6 +35,12 @@
 		BCFF5A6620B5DB06006642F1 /* ResizeControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A6520B5DB06006642F1 /* ResizeControl.swift */; };
 		BCFF5A6820B5DB40006642F1 /* UIImage+Crop.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCFF5A6720B5DB40006642F1 /* UIImage+Crop.swift */; };
 		D79AB0BA202EC9DD00109C97 /* willAlertFood.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79AB0B9202EC9DD00109C97 /* willAlertFood.swift */; };
+		DD21AC4420FE11A30015BA27 /* VoiceOver.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD21AC3E20FE11A30015BA27 /* VoiceOver.swift */; };
+		DD21AC4520FE11A30015BA27 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD21AC3F20FE11A30015BA27 /* Utilities.swift */; };
+		DD21AC4620FE11A30015BA27 /* TextDetection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD21AC4020FE11A30015BA27 /* TextDetection.swift */; };
+		DD21AC4720FE11A30015BA27 /* DocumentLayoutAnalysis.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD21AC4120FE11A30015BA27 /* DocumentLayoutAnalysis.swift */; };
+		DD21AC4820FE11A30015BA27 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD21AC4220FE11A30015BA27 /* Camera.swift */; };
+		DD21AC4920FE11A30015BA27 /* TesseractOCR.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD21AC4320FE11A30015BA27 /* TesseractOCR.swift */; };
 		EC8CE3B220EE50B0002AEB91 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC8CE3B120EE50B0002AEB91 /* StringExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -72,6 +78,12 @@
 		BCFF5A6A20B5DEE5006642F1 /* BestBefore-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BestBefore-Bridging-Header.h"; sourceTree = "<group>"; };
 		BCFF5A6E20B5DF7B006642F1 /* CropViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CropViewController.h; sourceTree = "<group>"; };
 		D79AB0B9202EC9DD00109C97 /* willAlertFood.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = willAlertFood.swift; sourceTree = "<group>"; };
+		DD21AC3E20FE11A30015BA27 /* VoiceOver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VoiceOver.swift; sourceTree = "<group>"; };
+		DD21AC3F20FE11A30015BA27 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		DD21AC4020FE11A30015BA27 /* TextDetection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextDetection.swift; sourceTree = "<group>"; };
+		DD21AC4120FE11A30015BA27 /* DocumentLayoutAnalysis.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DocumentLayoutAnalysis.swift; sourceTree = "<group>"; };
+		DD21AC4220FE11A30015BA27 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
+		DD21AC4320FE11A30015BA27 /* TesseractOCR.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TesseractOCR.swift; sourceTree = "<group>"; };
 		EC8CE3B120EE50B0002AEB91 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		EFFC7E855CA1BB5B18A17E90 /* Pods_BestBefore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BestBefore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -110,6 +122,7 @@
 		66C368B72022B7AD000FCD5D /* BestBefore */ = {
 			isa = PBXGroup;
 			children = (
+				DD21AC3D20FE11A30015BA27 /* Custom */,
 				66CEC431202C73FD000F2BD3 /* tessdata */,
 				66F971D4202ADE8900137605 /* setting.storyboard */,
 				6682E6E7202C2BD900F7C902 /* AlarmViewController.swift */,
@@ -151,6 +164,19 @@
 				A8B521C4509313A25C0D6BCA /* Pods-BestBefore.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DD21AC3D20FE11A30015BA27 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				DD21AC3E20FE11A30015BA27 /* VoiceOver.swift */,
+				DD21AC3F20FE11A30015BA27 /* Utilities.swift */,
+				DD21AC4020FE11A30015BA27 /* TextDetection.swift */,
+				DD21AC4120FE11A30015BA27 /* DocumentLayoutAnalysis.swift */,
+				DD21AC4220FE11A30015BA27 /* Camera.swift */,
+				DD21AC4320FE11A30015BA27 /* TesseractOCR.swift */,
+			);
+			path = Custom;
 			sourceTree = "<group>";
 		};
 		E92B9DCCD3A47239F5FB37EB /* Frameworks */ = {
@@ -299,14 +325,20 @@
 				BCFF5A6420B5DACB006642F1 /* CropRectView.swift in Sources */,
 				66F574AB202BDE4F00F2FBD3 /* AlarmClass.swift in Sources */,
 				66F574AF202BF13C00F2FBD3 /* DetailTableViewController.swift in Sources */,
+				DD21AC4620FE11A30015BA27 /* TextDetection.swift in Sources */,
 				BCFF5A6620B5DB06006642F1 /* ResizeControl.swift in Sources */,
+				DD21AC4520FE11A30015BA27 /* Utilities.swift in Sources */,
 				66E2B8492029421A00EC0936 /* D-DayTableViewCell.swift in Sources */,
 				66C368CD2022B959000FCD5D /* FoodClass.swift in Sources */,
 				66E3726F202DA77D00A9C88F /* TesseractOCRTableViewController.swift in Sources */,
 				66C368CB2022B7FC000FCD5D /* D-dayTableViewController.swift in Sources */,
+				DD21AC4720FE11A30015BA27 /* DocumentLayoutAnalysis.swift in Sources */,
 				66C695C6202AB756005C15DC /* AlarmTableViewController.swift in Sources */,
+				DD21AC4420FE11A30015BA27 /* VoiceOver.swift in Sources */,
+				DD21AC4920FE11A30015BA27 /* TesseractOCR.swift in Sources */,
 				66C368BB2022B7AD000FCD5D /* ViewController.swift in Sources */,
 				66C368B92022B7AD000FCD5D /* AppDelegate.swift in Sources */,
+				DD21AC4820FE11A30015BA27 /* Camera.swift in Sources */,
 				BCFF5A6020B5DA4C006642F1 /* CropViewController.swift in Sources */,
 				66F574B9202D37DD00F2FBD3 /* DataCenter.swift in Sources */,
 				66C695C8202AEC98005C15DC /* AlarmListTableViewController.swift in Sources */,

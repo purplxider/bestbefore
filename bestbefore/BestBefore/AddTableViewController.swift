@@ -85,8 +85,12 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     }
     
     func openCamera() {
-        picker.sourceType = .camera
-        present(picker, animated: false, completion: nil)
+//        picker.sourceType = .camera
+//        present(picker, animated: false, completion: nil)
+        print("BH")
+        let captureVC = ViewController()
+        self.navigationController?.pushViewController(captureVC, animated: true)
+    
     }
     
     
@@ -101,7 +105,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
         }
         
         let camera = UIAlertAction(title: "카메라", style: .default) { (action) in
-            self.openCamera()
+            self.openCamera() // 이거를 captureviewcontroller꺼낼수 있도록
         }
         
         let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)

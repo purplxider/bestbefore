@@ -218,29 +218,7 @@ class D_dayTableViewController: UITableViewController, UINavigationControllerDel
         present(controller, animated: true, completion: nil)
     }
     
-    @IBAction func addAnImage(_ sender: Any) {
-        let alert = UIAlertController(title: "어떻게 유통기한을 추가할까", message: "골라줘", preferredStyle: .actionSheet)
-        
-        let automaticAdditon = UIAlertAction(title: "자동추가", style: .default) { (action) in
-            //self.automaticAddition() //수정해야할 부분 => imageEditVeiw로 가야함
-            self.performSegue(withIdentifier: "imageEdit", sender: self)
-            //self.showCamera()
-        }
-        
-        let manualAddition = UIAlertAction(title: "수동추가", style: .default) { (action) in
-            self.manualAddition()
-        }
-        
-        let cancel = UIAlertAction(title: "취소", style: .cancel, handler: nil)
-        
-        alert.addAction(automaticAdditon)
-        alert.addAction(manualAddition)
-        alert.addAction(cancel)
-        
-        present(alert, animated: true, completion: nil)
-        
-        
-    }
+    
     
     
 }
