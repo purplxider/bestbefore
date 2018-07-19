@@ -29,6 +29,8 @@ class TesseractOCR: NSObject, G8TesseractDelegate {
         // gets a collection of UIImages for processing
         DispatchQueue.global(qos: .background).async { // OCR routine runs on separate queue as it can take time
             print("Processing \(images.count) images.")
+            var allRecognizedText = ""
+            let defaults = UserDefaults.standard
             for image in images{ // iterate thru the list of images
                 self.tesseract.image = image // loads image for recognition
                 self.tesseract.recognize() // run recognition algorithm
@@ -36,6 +38,7 @@ class TesseractOCR: NSObject, G8TesseractDelegate {
                 self.finishedOCRRequests += 1 // increments finished requests counter
                 if let recognizedText = self.tesseract.recognizedText { // OCR found text on the image
                     print("Text identified: ", recognizedText)
+                    allRecognizedText += recognizedText
                     self.controller.analyzer.add(recognizedText) // adds text to document analyzer
                 } else { // this piece of detected text rectangle has no text that was recognized
                     print("No text recognized.") // assumes Tesseract returns nil when processing an image with no text.
@@ -45,6 +48,7 @@ class TesseractOCR: NSObject, G8TesseractDelegate {
                     self.controller.analyzer.execute() // runs document analysis on all detected texts groups.
                 }
             }
+            defaults.set(allRecognizedText, forKey: "recognizedText")
         }
     }
     

@@ -23,6 +23,21 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     @IBAction func setCreate(_ sender: Any) {
 //        if let foodInfo = delegate {
         
+        guard addImage.image != nil else {
+            showToast(message: "사진을 입력해주세요")
+            return
+        }
+        
+        guard nameTextField.text != "" else {
+            showToast(message: "이름을 입력해주세요")
+            return
+        }
+        
+        guard dateTextField.text != "" else {
+            showToast(message: "유통기한을 입력해주세요")
+            return
+        }
+
             formatter.dateFormat = "yy-MM-dd"
             
             var foodDate = formatter.date(from: dateTextField.text!)
@@ -39,18 +54,59 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
                 getColor = UIColorFromRGB(rgbValue: 0xD1FFD3)
                 
             }
-            
-            if let addFoodImage = addImage.image {
+        
                 
-                dataCenter.foodArray.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addFoodImage, foodColor: getColor))
+                dataCenter.foodArray.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addImage.image!, foodColor: getColor))
            dataCenter.save()
                 
-            }
+    
             
 //    }
         
-        dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let recognizedText = UserDefaults.standard.string(forKey: "recognizedText") {
+            UserDefaults.standard.set(nil, forKey: "recognizedText")
+            let censoredText = censorText(text: recognizedText)
+            dateTextField.text = censoredText
+        }
+        
+        if let imageData = UserDefaults.standard.data(forKey: "savedImageData") {
+            UserDefaults.standard.set(nil, forKey: "savedImageData")
+            let savedImage = UIImage(data: imageData)
+            addImage.image = savedImage
+        }
+    }
+    
+    func censorText(text: String?) -> String {
+        guard let tempText = text else {
+            showToast(message: "인식된 글씨가 없습니다")
+            return ""
+        }
+        var editText: NSString = tempText as NSString
+        editText = editText.replacingOccurrences(of: ".", with: "-") as NSString
+        editText = editText.replacingOccurrences(of: "/", with: "-") as NSString
+        editText = editText.replacingOccurrences(of: " ", with: "-") as NSString
+        editText = editText.replacingOccurrences(of: "JAN", with: "01") as NSString
+        editText = editText.replacingOccurrences(of: "FEB", with: "02") as NSString
+        editText = editText.replacingOccurrences(of: "MAR", with: "03") as NSString
+        editText = editText.replacingOccurrences(of: "APR", with: "04") as NSString
+        editText = editText.replacingOccurrences(of: "MAY", with: "05") as NSString
+        editText = editText.replacingOccurrences(of: "JUN", with: "06") as NSString
+        editText = editText.replacingOccurrences(of: "JUL", with: "07") as NSString
+        editText = editText.replacingOccurrences(of: "AUG", with: "08") as NSString
+        editText = editText.replacingOccurrences(of: "SEP", with: "09") as NSString
+        editText = editText.replacingOccurrences(of: "OCT", with: "10") as NSString
+        editText = editText.replacingOccurrences(of: "NOV", with: "11") as NSString
+        editText = editText.replacingOccurrences(of: "DEC", with: "12") as NSString
+        
+        var resultText = editText as String
+        resultText = resultText.westernArabicNumeralsOnly
+        return resultText
+    }
+    
     func getIntervalDays(date: Date?, anotherDay: Date? = nil) -> Double {
         
         var interval: Double!
@@ -117,6 +173,25 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
         present(alert, animated: true, completion: nil)
         
         
+    }
+    
+    func showToast(message : String) {
+        
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height-100, width: 150, height: 35))
+        toastLabel.backgroundColor = UIColor.black.withAlphaComponent(0.6)
+        toastLabel.textColor = UIColor.white
+        toastLabel.textAlignment = .center;
+        toastLabel.font = UIFont(name: "Montserrat-Light", size: 12.0)
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 10;
+        toastLabel.clipsToBounds  =  true
+        self.view.addSubview(toastLabel)
+        UIView.animate(withDuration: 4.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {

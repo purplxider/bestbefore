@@ -165,6 +165,10 @@ class Camera: NSObject, AVCapturePhotoCaptureDelegate {
             return}
         guard let cgImage = uiImage.cgImage else {print("Error generating CGImage");self.lastPhoto=nil;return} // generate a corresponding CGImage
         guard let deviceOrientationOnCapture = self.deviceOrientationOnCapture else {print("Error retrieving orientation on capture");self.lastPhoto=nil;return}
+        let defaults = UserDefaults.standard
+        var savedImageData = defaults.object(forKey: "savedImageData")
+        savedImageData = UIImageJPEGRepresentation(uiImage, 1.0)
+        defaults.set(savedImageData, forKey: "savedImageData")
         self.lastPhoto = UIImage(cgImage: cgImage, scale: 1.0, orientation: deviceOrientationOnCapture.getUIImageOrientationFromDevice())
         print(self.lastPhoto)
         print("UIImage generated. Orientation: \(self.lastPhoto.imageOrientation.rawValue)")
