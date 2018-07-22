@@ -48,8 +48,8 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="R15-Zk-s9l">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="R15-Zk-s9l">
+                                <rect key="frame" x="0.0" y="-54" width="375" height="216"/>
                                 <date key="date" timeIntervalSinceReferenceDate="539759795.44863605">
                                     <!--2018-02-08 05:16:35 +0000-->
                                 </date>
@@ -203,8 +203,8 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbB-EC-pYV">
-                                            <rect key="frame" x="36" y="12" width="122" height="75"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="시간" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YbB-EC-pYV">
+                                            <rect key="frame" x="18" y="12" width="122" height="75"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="122" id="VZD-Cr-Ybr"/>
                                                 <constraint firstAttribute="height" constant="75" id="dHa-uw-qv4"/>
