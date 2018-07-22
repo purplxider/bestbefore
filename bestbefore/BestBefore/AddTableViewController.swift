@@ -20,9 +20,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dDayLabel: UILabel!
     @IBOutlet weak var dateTextField: UITextField!
-    @IBAction func setCreate(_ sender: Any) {
-//        if let foodInfo = delegate {
-        
+    @IBAction func setCreater(_ sender: Any) {
         guard addImage.image != nil else {
             showToast(message: "사진을 입력해주세요")
             return
@@ -37,34 +35,35 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
             showToast(message: "유통기한을 입력해주세요")
             return
         }
-
-            formatter.dateFormat = "yy-MM-dd"
+        
+        formatter.dateFormat = "yy-MM-dd"
+        
+        var foodDate = formatter.date(from: dateTextField.text!)
+        var getDday = getIntervalDays(date: now, anotherDay: foodDate)
+        var getColor:UIColor = UIColorFromRGB(rgbValue: 0xFF0000)
+        
+        if getDday > 0 {
+            getColor = UIColorFromRGB(rgbValue: 0xFFD1D1)
             
-            var foodDate = formatter.date(from: dateTextField.text!)
-            var getDday = getIntervalDays(date: now, anotherDay: foodDate)
-            var getColor:UIColor = UIColorFromRGB(rgbValue: 0xFF0000)
-        
-            if getDday > 0 {
-                getColor = UIColorFromRGB(rgbValue: 0xFFD1D1)
-                
-            } else if getDday > -2 {
-                getColor = UIColorFromRGB(rgbValue: 0xFEFFD1)
-                
-            } else {
-                getColor = UIColorFromRGB(rgbValue: 0xD1FFD3)
-                
-            }
-        
-                
-                dataCenter.foodArray.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addImage.image!, foodColor: getColor))
-           dataCenter.save()
-                
-    
+        } else if getDday > -2 {
+            getColor = UIColorFromRGB(rgbValue: 0xFEFFD1)
             
-//    }
+        } else {
+            getColor = UIColorFromRGB(rgbValue: 0xD1FFD3)
+            
+        }
         
-        self.navigationController?.popViewController(animated: true)
+        
+        dataCenter.foodArray.append(Food(name: nameTextField.text!, date: dateTextField.text!, dDay: Int(getDday), foodImage:  addImage.image!, foodColor: getColor))
+        dataCenter.save()
+        
+        
+        
+        //    }
+        
+    self.navigationController?.popViewController(animated: true)
     }
+   
     
     override func viewDidAppear(_ animated: Bool) {
         if let recognizedText = UserDefaults.standard.string(forKey: "recognizedText") {
@@ -150,9 +149,9 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     }
     
     
-    @IBAction func dismissAddView(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
-    }
+    @IBOutlet weak var dismissToFirst: UIBarButtonItem!
+    
+    
     
     @IBAction func addAnImage(_ sender: Any) {
         let alert = UIAlertController(title: "어디서 사진을 가져올까", message: "골라줘", preferredStyle: .actionSheet)

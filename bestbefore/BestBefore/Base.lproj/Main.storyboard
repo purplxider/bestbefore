@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Os-Wn-abx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Os-Wn-abx">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -132,32 +132,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="KtE-xk-3aS">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <items>
-                                <navigationItem title="수동추가" id="cnA-HQ-hFF">
-                                    <barButtonItem key="leftBarButtonItem" title="취소" id="Wht-uK-Imq">
-                                        <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="dismissAddView:" destination="AWM-gK-sVf" id="VfW-Jc-97l"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem key="rightBarButtonItem" title="저장" id="36c-hV-rtf">
-                                        <color key="tintColor" red="1" green="0.6588235294" blue="0.6588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <connections>
-                                            <action selector="setCreate:" destination="AWM-gK-sVf" id="0mx-nY-aEy"/>
-                                        </connections>
-                                    </barButtonItem>
-                                </navigationItem>
-                            </items>
-                        </navigationBar>
                         <sections>
                             <tableViewSection id="MBi-38-3yX">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="250" id="Thf-ds-jRV">
-                                        <rect key="frame" x="0.0" y="44" width="414" height="250"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Thf-ds-jRV" id="1eZ-QY-18T">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="249.66666666666666"/>
@@ -181,7 +160,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0nb-gH-ADw">
-                                        <rect key="frame" x="0.0" y="294" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="250" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0nb-gH-ADw" id="4cN-af-RB4">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -205,7 +184,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Awo-Qc-PeW">
-                                        <rect key="frame" x="0.0" y="338" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="294" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Awo-Qc-PeW" id="Woy-Xd-Uxu">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -229,7 +208,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PLf-kA-NaX">
-                                        <rect key="frame" x="0.0" y="382" width="414" height="44"/>
+                                        <rect key="frame" x="0.0" y="338" width="414" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PLf-kA-NaX" id="cGG-PW-coJ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
@@ -260,7 +239,13 @@
                             <outlet property="delegate" destination="AWM-gK-sVf" id="Scl-Cf-obv"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Title" id="A1o-Me-Fts"/>
+                    <navigationItem key="navigationItem" title="추가" id="A1o-Me-Fts">
+                        <barButtonItem key="rightBarButtonItem" title="저장" id="iI0-qd-ziG">
+                            <connections>
+                                <action selector="setCreater:" destination="AWM-gK-sVf" id="GUu-Qe-KHA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="addImage" destination="OoK-R7-6zR" id="04o-zv-2jK"/>
                         <outlet property="dDayLabel" destination="jhm-ds-h0s" id="aik-ht-hcI"/>
