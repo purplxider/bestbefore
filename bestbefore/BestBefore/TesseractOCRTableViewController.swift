@@ -30,7 +30,7 @@ class TesseractOCRTableViewController: UITableViewController {
     // Tesseract OCR 문자인식
     func performImageRecognition(_ image: UIImage) {
         
-        if let tesseract = G8Tesseract(language: "eng") {
+        if let tesseract = G8Tesseract(language: "eng+kor_vert+kor") {
             tesseract.pageSegmentationMode = .auto
             tesseract.image = image.g8_blackAndWhite()
             tesseract.recognize()
