@@ -16,6 +16,7 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
     var now = Date()
     let formatter = DateFormatter()
     
+    @IBOutlet weak var addAnImageLabel: UIButton!
     @IBOutlet weak var addImage: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var dDayLabel: UILabel!
@@ -66,6 +67,10 @@ class AddTableViewController: UITableViewController, UINavigationControllerDeleg
    
     
     override func viewDidAppear(_ animated: Bool) {
+        if addImage.image != nil {
+            addAnImageLabel.isHidden = true
+        }
+        
         if let recognizedText = UserDefaults.standard.string(forKey: "recognizedText") {
             UserDefaults.standard.set(nil, forKey: "recognizedText")
             let censoredText = censorText(text: recognizedText)
