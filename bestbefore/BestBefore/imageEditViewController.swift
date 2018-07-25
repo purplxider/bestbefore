@@ -113,7 +113,7 @@ class imageEditViewController : UIViewController, UINavigationControllerDelegate
 //           imageView.image = image
         //        updateEditButtonEnabled()
         
-        if let tesseract = G8Tesseract(language: "eng+kor_vert+kor"){
+        if let tesseract = G8Tesseract(language: "eng+kor"){
             tesseract.pageSegmentationMode = .auto
             tesseract.image = image.g8_blackAndWhite()
             tesseract.recognize()

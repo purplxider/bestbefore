@@ -18,7 +18,7 @@ class TesseractOCR: NSObject, G8TesseractDelegate {
     init(viewController: ViewController){
         self.controller = viewController
         self.finishedOCRRequests = 0
-        self.tesseract = G8Tesseract(language: "eng+kor_vert+kor")
+        self.tesseract = G8Tesseract(language: "eng+kor")
         self.cancelRequests = false
         super.init()
         self.tesseract.delegate = self // grant delegate authority to self
