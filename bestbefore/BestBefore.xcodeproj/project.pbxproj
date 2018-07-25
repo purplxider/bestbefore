@@ -119,8 +119,8 @@
 		66C368B72022B7AD000FCD5D /* BestBefore */ = {
 			isa = PBXGroup;
 			children = (
-				DD21AC3D20FE11A30015BA27 /* Custom */,
 				66CEC431202C73FD000F2BD3 /* tessdata */,
+				DD21AC3D20FE11A30015BA27 /* Custom */,
 				66F971D4202ADE8900137605 /* setting.storyboard */,
 				6682E6E7202C2BD900F7C902 /* AlarmViewController.swift */,
 				66C695C7202AEC98005C15DC /* AlarmListTableViewController.swift */,
